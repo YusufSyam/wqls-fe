@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ClientLayout from "@/components/layout/ClientLayout.component";
+import HeaderLayout from "@/components/layout/HeaderLayout.component";
 
 export const metadata: Metadata = {
   title: "wqls",
@@ -13,14 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 text-gray-900">
-        <header className="bg-white shadow p-4">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-xl font-bold text-blue-600">Pejuang OSN</h1>
-          </div>
+      <body className="flex flex-col">
+        <header className="bg-white shadow py-4 px-48">
+          <HeaderLayout />
         </header>
 
-        <main className="max-w-4xl mx-auto p-4">{children}</main>
+        <main className="mx-48 py-10">
+          <ClientLayout>{children}</ClientLayout>
+        </main>
 
         <footer className="text-center text-sm text-gray-500 mt-12 pb-4">
           © 2025 Pejuang OSN. All rights reserved.
