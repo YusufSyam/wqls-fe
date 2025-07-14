@@ -10,6 +10,7 @@ const HomePage: React.FC<IHomePage> = ({}) => {
   return (
     <Stack>
       <HeaderText1 title="Selamat Datang" subTitle="lorem ipsum dolor sit amet" />
+      
     </Stack>
   );
 };
