@@ -37,6 +37,17 @@ export default {
       1: "0px 1px 4px rgba(0, 0, 0, 0.12)",
       2: "drop-shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]",
     },
+    extend: {
+      fontFamily: {
+        poppins: ["poppins", "sans-serif"],
+        "poppins-bold": ["poppins-bold", "sans-serif"],
+        "poppins-light": ["poppins-light", "sans-serif"],
+        "poppins-semibold": ["poppins-semibold", "sans-serif"],
+        quicksand: ["quicksand", "sans-serif"],
+        "quicksand-semibold": ["quicksand-semibold", "sans-serif"],
+        "quicksand-bold": ["quicksand-bold", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
