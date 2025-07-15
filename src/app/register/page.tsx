@@ -21,6 +21,9 @@ const registerSchema = yup.object().shape({
     .string()
     .email("Format email tidak valid")
     .required("Email wajib diisi"),
+  username: yup
+    .string()
+    .required("Username wajib diisi"),
   password: yup
     .string()
     .min(6, "Minimal 6 karakter")
@@ -36,6 +39,7 @@ const RegisterPage: React.FC<IRegisterPage> = ({}) => {
     validate: yupResolver(registerSchema),
     initialValues: {
       email: "",
+      username: "",
       password: "",
       confirmPassword: "",
     },
@@ -53,6 +57,8 @@ const RegisterPage: React.FC<IRegisterPage> = ({}) => {
     //   console.error(error);
     //   alert("Register gagal");
     // }
+
+    // TODO: redirek ke halaman login
   };
 
   return (
@@ -64,6 +70,12 @@ const RegisterPage: React.FC<IRegisterPage> = ({}) => {
           label="Email"
           placeholder="your@email.com"
           {...form.getInputProps("email")}
+        />
+        
+        <TextInput
+          label="Username"
+          placeholder="your name"
+          {...form.getInputProps("username")}
         />
 
         <PasswordInput
