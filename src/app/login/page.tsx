@@ -13,14 +13,15 @@ import { useForm, yupResolver } from "@mantine/form";
 import * as yup from "yup";
 import Link from "next/link";
 import ROUTES from "@/utils/constants/routes.const";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext.context";
 
 export interface ILoginPage {}
 
 const loginSchema = yup.object().shape({
-  email: yup
+  username: yup
     .string()
-    .email("Format email tidak valid")
-    .required("Email wajib diisi"),
+    .required("Username wajib diisi"),
   password: yup
     .string()
     .min(6, "Minimal 6 karakter")
@@ -28,26 +29,25 @@ const loginSchema = yup.object().shape({
 });
 
 const LoginPage: React.FC<ILoginPage> = ({}) => {
+  const { login } = useAuth();
+  const router = useRouter();
+
   const form = useForm({
     validate: yupResolver(loginSchema),
     initialValues: {
-      email: "",
+      username: "",
       password: "",
     },
   });
 
   const handleLogin = async (values: typeof form.values) => {
     console.log(values);
-    // try {
-    //   // TODO: Ganti dengan panggilan ke API login kamu
-    //   console.log("Submitting login...", values);
-
-    //   // Simulasi berhasil login
-    //   alert("Login berhasil (dummy)");
-    // } catch (error) {
-    //   console.error(error);
-    //   alert("Login gagal");
-    // }
+    try {
+      await login(values.username, values.password);
+      router.push("/");
+    } catch {
+      alert("Login gagal");
+    }
   };
 
   return (
@@ -56,9 +56,9 @@ const LoginPage: React.FC<ILoginPage> = ({}) => {
 
       <form onSubmit={form.onSubmit(handleLogin)} className="space-y-4">
         <TextInput
-          label="Email"
-          placeholder="your@email.com"
-          {...form.getInputProps("email")}
+          label="username"
+          placeholder="username"
+          {...form.getInputProps("username")}
         />
 
         <PasswordInput
@@ -73,7 +73,7 @@ const LoginPage: React.FC<ILoginPage> = ({}) => {
           </Button>
           <Text>
             Belum mempunyai akun?
-            <Link href={ROUTES.REGISTER}>{" "}Register{" "}</Link>
+            <Link href={ROUTES.REGISTER}> Register </Link>
             terlebih dahulu
           </Text>
         </Stack>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from "@/components/layout/ClientLayout.component";
 import HeaderLayout from "@/components/layout/HeaderLayout.component";
+import { AuthProvider } from "@/context/AuthContext.context";
 
 export const metadata: Metadata = {
   title: "wqls",
@@ -16,17 +17,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col">
-        <header className="bg-white shadow py-4 px-48">
-          <HeaderLayout />
-        </header>
+        <AuthProvider>
+          <header className="bg-white shadow py-4 px-48">
+            <HeaderLayout />
+          </header>
 
-        <main className="mx-48 py-10">
-          <ClientLayout>{children}</ClientLayout>
-        </main>
+          <main className="mx-48 py-10">
+            <ClientLayout>{children}</ClientLayout>
+          </main>
 
-        <footer className="text-center text-sm text-gray-500 mt-12 pb-4">
-          © 2025 Pejuang OSN. All rights reserved.
-        </footer>
+          <footer className="text-center text-sm text-gray-500 mt-12 pb-4">
+            © 2025 Pejuang OSN. All rights reserved.
+          </footer>
+        </AuthProvider>
       </body>
     </html>
   );
