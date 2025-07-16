@@ -1,10 +1,9 @@
-'use client';
+"use client";
 
-import { loginUser } from '@/api/auth/login';
-import { logoutUser } from '@/api/auth/logout';
-import { getMe } from '@/api/auth/me';
-import React, { createContext, useContext, useEffect, useState } from 'react';
-
+import { getCurrentUser, loginUser } from "@/api/auth/login";
+import { logoutUser } from "@/api/auth/logout";
+import { getMe } from "@/api/auth/me";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 type User = { id: number; username: string; email: string };
 type AuthContextType = {
@@ -18,35 +17,42 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Cek login saat inisialisasi
-  useEffect(() => {
-    (async () => {
-      try {
-        const me = await getMe();
-        setUser(me);
-      } catch {
-        setUser(null);
-      }
-    })();
-  }, []);
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     try {
+  //       const { user } = await getMe(); // /auth/users/me/
+  //       setUser(user);
+  //       setIsLoggedIn(true);
+  //     } catch {
+  //       setIsLoggedIn(false);
+  //     }
+  //   };
+
+  //   fetchUser();
+  // }, []);
 
   const login = async (username: string, password: string) => {
-    const { user } = await loginUser({ username, password });
-    setUser(user); 
-    setIsLoggedIn(true)
+    await loginUser({ username, password });
+
+    const user = await getCurrentUser();
+    console.log("logged in user", user?.username);
+    setUser(user);
+    setIsLoggedIn(true);
   };
 
   const logout = () => {
     logoutUser();
     setUser(null);
-    setIsLoggedIn(false)
+    setIsLoggedIn(false);
   };
 
-  useEffect(()=>{
-    setIsLoggedIn(user!=null)
-  }, [user])
+  useEffect(() => {
+    // setIsLoggedIn(user != null);
+    console.log("user is changed, user=", user?.username);
+  }, [user]);
 
   return (
     <AuthContext.Provider value={{ user, login, logout, isLoggedIn }}>
@@ -57,6 +63,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
 export function useAuth() {
   const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error('useAuth must be used within AuthProvider');
+  if (!ctx) throw new Error("useAuth must be used within AuthProvider");
   return ctx;
 }

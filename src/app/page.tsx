@@ -13,6 +13,8 @@ const HomePage: React.FC<IHomePage> = ({}) => {
   // useEffect(()=>{
 
   // }, [isLoggedIn])
+  console.log(isLoggedIn, "isLoggedIn")
+  console.log(user, "user")
   return (
     <Stack>
       {isLoggedIn || user!=null ? (

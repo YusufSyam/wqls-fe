@@ -34,7 +34,19 @@ const HeaderLayout: React.FC<IHeaderLayout> = ({}) => {
             <Text>Log out</Text>
           </div>
         ) : (
-          <NavbarMenu label="Log In" href={ROUTES.LOGIN} />
+          <>
+            <div
+              onClick={() => {
+                logout();
+
+                router.push(ROUTES.LOGIN);
+              }}
+              className="cursor-pointer"
+            >
+              <Text>Log out</Text>
+            </div>
+            <NavbarMenu label="Log In" href={ROUTES.LOGIN} />
+          </>
         )}
       </Group>
     </Group>
