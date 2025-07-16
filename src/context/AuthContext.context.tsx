@@ -10,6 +10,7 @@ type User = { id: number; username: string; email: string };
 type AuthContextType = {
   user: User | null;
   login: (username: string, password: string) => Promise<void>;
+  isLoggedIn: boolean;
   logout: () => void;
 };
 
@@ -17,6 +18,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   // Cek login saat inisialisasi
   useEffect(() => {
@@ -33,15 +35,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const login = async (username: string, password: string) => {
     const { user } = await loginUser({ username, password });
     setUser(user); 
+    setIsLoggedIn(true)
   };
 
   const logout = () => {
     logoutUser();
     setUser(null);
+    setIsLoggedIn(false)
   };
 
+  useEffect(()=>{
+    setIsLoggedIn(user!=null)
+  }, [user])
+
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, isLoggedIn }}>
       {children}
     </AuthContext.Provider>
   );

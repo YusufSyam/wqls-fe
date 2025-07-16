@@ -3,16 +3,29 @@ import HeaderText1 from "@/components/HeaderText1.component";
 import { useAuth } from "@/context/AuthContext.context";
 import { Stack, Text } from "@mantine/core";
 
-import React from "react";
+import React, { useEffect } from "react";
 
 export interface IHomePage {}
 
 const HomePage: React.FC<IHomePage> = ({}) => {
-  const { user } = useAuth();
+  const { user, isLoggedIn } = useAuth();
+
+  // useEffect(()=>{
+
+  // }, [isLoggedIn])
   return (
     <Stack>
-      <HeaderText1 title={`Selamat Datang ${user?.username}`} subTitle="lorem ipsum dolor sit amet" />
-      
+      {isLoggedIn || user!=null ? (
+        <HeaderText1
+          title={`Selamat Datang ${user?.username}`}
+          subTitle="lorem ipsum dolor sit amet"
+        />
+      ) : (
+        <HeaderText1
+          title={`Selamat Datang Tamu`}
+          subTitle="lorem ipsum dolor sit amet"
+        />
+      )}
     </Stack>
   );
 };

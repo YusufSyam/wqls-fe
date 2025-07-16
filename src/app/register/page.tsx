@@ -13,6 +13,10 @@ import { useForm, yupResolver } from "@mantine/form";
 import * as yup from "yup";
 import Link from "next/link";
 import ROUTES from "@/utils/constants/routes.const";
+import { registerUser } from "@/api/auth/register";
+
+import { notifications } from "@mantine/notifications";
+import { useRouter } from "next/navigation";
 
 export interface IRegisterPage {}
 
@@ -21,9 +25,11 @@ const registerSchema = yup.object().shape({
     .string()
     .email("Format email tidak valid")
     .required("Email wajib diisi"),
-  username: yup
-    .string()
-    .required("Username wajib diisi"),
+  username: yup.string().required("Username wajib diisi"),
+  // name: yup.string().required("Nama lengkap wajib diisi"),
+  // school: yup.string().required("Asal sekolah lengkap wajib diisi"),
+  // tutor_name: yup.string().required("Nama tutor lengkap wajib diisi"),
+  // tutor_number: yup.string().required("Nomor tutor lengkap wajib diisi"),
   password: yup
     .string()
     .min(6, "Minimal 6 karakter")
@@ -35,30 +41,54 @@ const registerSchema = yup.object().shape({
 });
 
 const RegisterPage: React.FC<IRegisterPage> = ({}) => {
+  const router = useRouter(); // tambahkan
   const form = useForm({
     validate: yupResolver(registerSchema),
     initialValues: {
       email: "",
       username: "",
+      // name: "",
+      // school: "",
+      // tutor_name: "",
+      // tutor_number: "",
       password: "",
       confirmPassword: "",
     },
   });
 
   const handleRegister = async (values: typeof form.values) => {
-    console.log(values);
-    // try {
-    //   // TODO: Ganti dengan panggilan ke API login kamu
-    //   console.log("Submitting login...", values);
+    try {
+      const payload = {
+        email: values.email,
+        username: values.username,
+        password: values.password,
+        // name: values.name,
+        // number: values.username, // menggunakan username sebagai nomor ID siswa
+        // school: values.school,
+        // tutor_name: values.tutor_name,
+        // tutor_number: values.tutor_number,
+      };
 
-    //   // Simulasi berhasil login
-    //   alert("Register berhasil (dummy)");
-    // } catch (error) {
-    //   console.error(error);
-    //   alert("Register gagal");
-    // }
+      await registerUser(payload);
 
-    // TODO: redirek ke halaman login
+      notifications.show({
+        title: "Berhasil Register",
+        message: "Silakan login untuk melanjutkan",
+        color: "green",
+      });
+
+      router.push(ROUTES.LOGIN);
+    } catch (error: any) {
+      const message =
+        error?.response?.data?.username?.[0] ||
+        error?.response?.data?.email?.[0] ||
+        "Gagal register. Cek inputan atau coba lagi.";
+      notifications.show({
+        title: "Gagal Register",
+        message,
+        color: "red",
+      });
+    }
   };
 
   return (
@@ -71,12 +101,32 @@ const RegisterPage: React.FC<IRegisterPage> = ({}) => {
           placeholder="your@email.com"
           {...form.getInputProps("email")}
         />
-        
+
         <TextInput
           label="Username"
           placeholder="your name"
           {...form.getInputProps("username")}
         />
+        {/* <TextInput
+          label="Nama Lengkap"
+          placeholder="your name"
+          {...form.getInputProps("name")}
+        />
+        <TextInput
+          label="Asal Sekolah"
+          placeholder="your name"
+          {...form.getInputProps("school")}
+        />
+        <TextInput
+          label="Nama tutor"
+          placeholder="your name"
+          {...form.getInputProps("tutor_name")}
+        />
+        <TextInput
+          label="Nomor Tutor"
+          placeholder="your name"
+          {...form.getInputProps("tutor_number")}
+        /> */}
 
         <PasswordInput
           label="Password"

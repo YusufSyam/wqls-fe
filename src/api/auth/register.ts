@@ -4,11 +4,11 @@ interface RegisterPayload {
   username: string;
   email: string;
   password: string;
-  name: string;
-  number: string;
-  school: string;
-  tutor_name: string;
-  tutor_number: string;
+  // name: string;
+  // number: string;
+  // school: string;
+  // tutor_name: string;
+  // tutor_number: string;
 }
 
 export const registerUser = async (data: RegisterPayload) => {
