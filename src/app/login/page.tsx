@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   TextInput,
   PasswordInput,
@@ -15,6 +15,7 @@ import Link from "next/link";
 import ROUTES from "@/utils/constants/routes.const";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext.context";
+import LoadingModal from "@/components/LoadingModal.component";
 
 export interface ILoginPage {}
 
@@ -31,6 +32,7 @@ const loginSchema = yup.object().shape({
 const LoginPage: React.FC<ILoginPage> = ({}) => {
   const { login } = useAuth();
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false)
 
   const form = useForm({
     validate: yupResolver(loginSchema),
@@ -41,17 +43,21 @@ const LoginPage: React.FC<ILoginPage> = ({}) => {
   });
 
   const handleLogin = async (values: typeof form.values) => {
+    setIsLoading(true)
     console.log(values);
     try {
       await login(values.username, values.password);
       router.push("/");
     } catch {
       alert("Login gagal");
+    } finally {
+      setIsLoading(false)
     }
   };
 
   return (
     <Stack maw={400} mx="auto" mt={60}>
+      <LoadingModal opened={isLoading} />
       <Text className="text-2xl font-bold mb-6 text-center">Login</Text>
 
       <form onSubmit={form.onSubmit(handleLogin)} className="space-y-4">

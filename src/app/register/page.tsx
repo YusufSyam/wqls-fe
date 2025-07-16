@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   TextInput,
   PasswordInput,
@@ -17,6 +17,7 @@ import { registerUser } from "@/api/auth/register";
 
 import { notifications } from "@mantine/notifications";
 import { useRouter } from "next/navigation";
+import LoadingModal from "@/components/LoadingModal.component";
 
 export interface IRegisterPage {}
 
@@ -56,7 +57,11 @@ const RegisterPage: React.FC<IRegisterPage> = ({}) => {
     },
   });
 
+  
+  const [isLoading, setIsLoading] = useState(false)
+
   const handleRegister = async (values: typeof form.values) => {
+    setIsLoading(true)
     try {
       const payload = {
         email: values.email,
@@ -88,11 +93,14 @@ const RegisterPage: React.FC<IRegisterPage> = ({}) => {
         message,
         color: "red",
       });
+    }finally{
+      setIsLoading(false)
     }
   };
 
   return (
     <Stack maw={400} mx="auto" mt={60}>
+      <LoadingModal opened={isLoading} />
       <Text className="text-2xl font-bold mb-6 text-center">Register</Text>
 
       <form onSubmit={form.onSubmit(handleRegister)} className="space-y-4">
