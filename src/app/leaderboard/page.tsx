@@ -1,12 +1,22 @@
 "use client";
 
+import { ILeaderboardResponseItem, getLeaderboard } from "@/api/leaderboard.api";
 import HeaderText1 from "@/components/HeaderText1.component";
 import MyTable, { IMyTableColumn } from "@/components/MyTable.component";
 import { dummyLeaderboard } from "@/utils/constants/dummies.const";
+import { TQuizSubject } from "@/utils/constants/quizSubject.const";
 import { Stack } from "@mantine/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export interface ILeaderboardPage {}
+
+export interface ILeaderboardItem {
+  rank: number;
+  username: string;
+  duration: number;
+  score: number;
+  subject: TQuizSubject;
+}
 
 const columns: IMyTableColumn[] = [
   { key: "rank", label: "Rank", type: "number" },
@@ -17,10 +27,30 @@ const columns: IMyTableColumn[] = [
 ];
 
 const LeaderboardPage: React.FC<ILeaderboardPage> = ({}) => {
+  const [loading, setLoading] = useState(true);
+  const [leaderboard, setLeaderboard] = useState<ILeaderboardItem[]>([]);
+  
+  useEffect(() => {
+    const fetchLeaderboard = async () => {
+      try {
+        const data : ILeaderboardResponseItem = await getLeaderboard(10, 0, "Matematika");
+        console.log('data leaderboard',data)
+        setLeaderboard(data?.data)
+      } catch (error) {
+        console.error("Failed to fetch leaderboard:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLeaderboard();
+  }, []);
+
+  console.log('zzz',leaderboard)
   return (
     <Stack>
       <HeaderText1 title="Leaderboard" />
-      <MyTable columns={columns} data={dummyLeaderboard} />
+      <MyTable columns={columns} data={leaderboard} />
     </Stack>
   );
 };
