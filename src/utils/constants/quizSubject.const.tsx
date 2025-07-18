@@ -10,12 +10,24 @@ export const QUIZ_SUBJECT: TQuizSubject[] = [
   "Matematika",
 ];
 
-export function getQuizSubjectById(id:number){
-  if(id<=0 && id>9){
-    return "Subject Invalid"
-  } 
+export const QUIZ_SUBJECT_SELECT_LIST : any = [
+  { value: 1, label: "Astronomi" },
+  { value: 2, label: "Biologi" },
+  { value: 3, label: "Ekonomi" },
+  { value: 4, label: "Fisika" },
+  { value: 5, label: "Geografi" },
+  { value: 6, label: "Informatika" },
+  { value: 7, label: "Kebumian" },
+  { value: 8, label: "Kimia" },
+  { value: 9, label: "Matematika" },
+];
 
-  return QUIZ_SUBJECT?.[id-1]
+export function getQuizSubjectById(id: number) {
+  if (id <= 0 && id > 9) {
+    return "Subject Invalid";
+  }
+
+  return QUIZ_SUBJECT?.[id - 1];
 }
 
 export type TQuizSubject =

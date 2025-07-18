@@ -19,7 +19,6 @@ const HeaderLayout: React.FC<IHeaderLayout> = ({}) => {
       <NavbarMenu label="OSN" href={ROUTES.HOME} />
       <Group className="gap-8">
         <NavbarMenu label="Quiz" href={ROUTES.QUIZ} />
-        <NavbarMenu label="Submissions" href={ROUTES.SUBMISSIONS} />
         <NavbarMenu label="Leaderboard" href={ROUTES.LEADERBOARD} />
         <Text>|</Text>
         {isLoggedIn ? (
