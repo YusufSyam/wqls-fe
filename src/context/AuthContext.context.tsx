@@ -3,6 +3,7 @@
 import { getCurrentUser, loginUser } from "@/api/auth/login";
 import { logoutUser } from "@/api/auth/logout";
 import { getMe } from "@/api/auth/me";
+import axiosInstance from "@/lib/axiosInstance";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 type User = { id: number; username: string; email: string };
@@ -19,20 +20,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Cek login saat inisialisasi
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     try {
-  //       const { user } = await getMe(); // /auth/users/me/
-  //       setUser(user);
-  //       setIsLoggedIn(true);
-  //     } catch {
-  //       setIsLoggedIn(false);
-  //     }
-  //   };
+    useEffect(() => {
+    const token = localStorage.getItem("access_token");
 
-  //   fetchUser();
-  // }, []);
+    if (token) {
+      // Ambil data user saat app pertama dimuat
+      axiosInstance.get("/auth/users/me/")
+        .then((res) => {
+          setUser(res.data);
+        })
+        .catch((err) => {
+          console.error("Token invalid or expired", err);
+          localStorage.removeItem("access_token");
+          localStorage.removeItem("refresh_token");
+          setUser(null);
+        });
+    }
+  }, []);
 
   const login = async (username: string, password: string) => {
     await loginUser({ username, password });
@@ -50,7 +54,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   useEffect(() => {
-    // setIsLoggedIn(user != null);
+    setIsLoggedIn(user != null);
     console.log("user is changed, user=", user?.username);
   }, [user]);
 

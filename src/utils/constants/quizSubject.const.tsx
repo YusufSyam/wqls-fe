@@ -1,4 +1,4 @@
-export const QUIZ_SUBJECT: string[] = [
+export const QUIZ_SUBJECT: TQuizSubject[] = [
   "Astronomi",
   "Biologi",
   "Ekonomi",
@@ -9,6 +9,14 @@ export const QUIZ_SUBJECT: string[] = [
   "Kimia",
   "Matematika",
 ];
+
+export function getQuizSubjectById(id:number){
+  if(id<=0 && id>9){
+    return "Subject Invalid"
+  } 
+
+  return QUIZ_SUBJECT?.[id-1]
+}
 
 export type TQuizSubject =
   | "Astronomi"

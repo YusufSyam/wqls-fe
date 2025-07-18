@@ -1,28 +1,35 @@
-'use client'
+"use client";
 
-import React from 'react'
+import { getQuizSubjectById } from "@/utils/constants/quizSubject.const";
+import {
+  formatDateNormal,
+  getQuizDuration,
+} from "@/utils/functions/date.function";
+import React from "react";
 
 export interface IMyTableColumn {
-  key: string
-  label: string
-  type?: 'text' | 'number' | 'duration'
+  key: string;
+  label: string;
+  type?: "text" | "number" | "duration" | "date" | "subject";
 }
 
 export interface IMyTable {
-  columns: IMyTableColumn[]
-  data: Record<string, any>[]
+  columns: IMyTableColumn[];
+  data: Record<string, any>[];
 }
 
-const MyTable: React.FC<IMyTable> = ({columns, data}) => {
-  const renderCell = (value: any, type: IMyTableColumn['type']) => {
-    if (type === 'duration') {
-      // Contoh render durasi dalam format menit:detik
-      const minutes = Math.floor(value / 60)
-      const seconds = value % 60
-      return `${minutes}m ${seconds}s`
+const MyTable: React.FC<IMyTable> = ({ columns, data }) => {
+  const renderCell = (value: any, type: IMyTableColumn["type"]) => {
+    if (type === "duration") {
+      return getQuizDuration(value);
+    } else if (type === "subject") {
+      return getQuizSubjectById(value as number);
+    } else if (type === "date") {
+      return formatDateNormal(new Date(value));
+    } else {
+      return value;
     }
-    return value
-  }
+  };
 
   return (
     <div className="overflow-x-auto border rounded">
@@ -39,9 +46,11 @@ const MyTable: React.FC<IMyTable> = ({columns, data}) => {
         <tbody>
           {data.map((row, idx) => (
             <tr key={idx} className="border-b hover:bg-gray-50">
-              {columns.map((col) => (
+              {columns.map((col: any) => (
                 <td key={col.key} className="px-4 py-2">
-                  {renderCell(row[col.key], col.type)}
+                  {col.key == "index"
+                    ? idx + 1
+                    : renderCell(row[col.key], col.type)}
                 </td>
               ))}
             </tr>
@@ -49,7 +58,7 @@ const MyTable: React.FC<IMyTable> = ({columns, data}) => {
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default MyTable
+export default MyTable;

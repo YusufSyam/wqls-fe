@@ -2,7 +2,7 @@ const ROUTES = {
   HOME: '/',
   QUIZ: '/quiz',
   LEADERBOARD: '/leaderboard',
-  SUBMISSIONS: '/submissions',
+  SUBMISSIONS: '/quiz/history',
   LOGIN: '/login',
   REGISTER: '/register',
 }
