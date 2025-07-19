@@ -23,11 +23,10 @@ export interface ILeaderboardItem {
 }
 
 const columns: IMyTableColumn[] = [
-  { key: "rank", label: "Rank", type: "number" },
-  { key: "username", label: "Username", type: "text" },
-  { key: "duration", label: "Duration", type: "duration" },
-  { key: "score", label: "Score", type: "number" },
-  { key: "subject", label: "Subject", type: "text" },
+  { key: "rank", label: "Peringkat", type: "number" },
+  { key: "name", label: "Nama", type: "text" },
+  { key: "duration", label: "Durasi Ujian", type: "duration" },
+  { key: "score", label: "Skor", type: "number" },
 ];
 
 const ITEMS_PER_PAGE = 20;
@@ -40,27 +39,27 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
 
   const [totalCount, setTotalCount] = useState(0);
   const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
-//   const currentPage = parseInt((page as string) || "1");
-//   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
+  //   const currentPage = parseInt((page as string) || "1");
+  //   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
   console.log("subject", subject);
 
-  const fetchLeaderboard = async (offset:number) => {
-      try {
-        const data: ILeaderboardResponseItem = await getLeaderboard(
-          ITEMS_PER_PAGE,
-          offset,
-          subject
-        );
-        console.log("data leaderboard", data);
-        setLeaderboard(data?.data);
-        setTotalCount(data?.total)
-      } catch (error) {
-        console.error("Failed to fetch leaderboard:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchLeaderboard = async (offset: number) => {
+    try {
+      const data: ILeaderboardResponseItem = await getLeaderboard(
+        ITEMS_PER_PAGE,
+        offset,
+        subject
+      );
+      console.log("data leaderboard", data);
+      setLeaderboard(data?.data);
+      setTotalCount(data?.total);
+    } catch (error) {
+      console.error("Failed to fetch leaderboard:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     fetchLeaderboard(0);
@@ -68,18 +67,18 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
 
   console.log("zzz", leaderboard);
   return (
-    <Stack>
-      <HeaderText1 title="Leaderboard" />
+    <Stack className="gap-8">
+      <HeaderText1 title="Leaderboard" subTitle={`Daftar nilai quiz ${subject} siswa diurutkan berdasarkan nilai tertinggi dan durasi terpendek`} />
       <MyTable columns={columns} data={leaderboard} />
-    <div style={{ marginTop: "1rem" }}>
+      <div style={{ marginTop: "1rem" }}>
         {Array.from({ length: totalPages }, (_, i) => (
           <button
             key={i}
-            onClick={()=>{
-              fetchLeaderboard(ITEMS_PER_PAGE)
+            onClick={() => {
+              fetchLeaderboard(ITEMS_PER_PAGE);
             }}
             style={{
-              fontWeight:  "normal",
+              fontWeight: "normal",
               marginRight: "0.5rem",
             }}
           >

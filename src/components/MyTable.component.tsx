@@ -5,6 +5,7 @@ import {
   formatDateNormal,
   getQuizDuration,
 } from "@/utils/functions/date.function";
+import { Text } from "@mantine/core";
 import React from "react";
 
 export interface IMyTableColumn {
@@ -32,12 +33,15 @@ const MyTable: React.FC<IMyTable> = ({ columns, data }) => {
   };
 
   return (
-    <div className="overflow-x-auto border rounded">
+    <div className="overflow-x-auto border rounded-3xl">
       <table className="min-w-full table-auto text-sm">
-        <thead className="bg-gray-100 border-b">
+        <thead className="bg-dark-blue border-b">
           <tr>
             {columns.map((col) => (
-              <th key={col.key} className="px-4 py-2 text-left font-semibold">
+              <th
+                key={col.key}
+                className="px-6 py-4 text-left font-quicksand text-white text-md"
+              >
                 {col.label}
               </th>
             ))}
@@ -45,12 +49,16 @@ const MyTable: React.FC<IMyTable> = ({ columns, data }) => {
         </thead>
         <tbody>
           {data.map((row, idx) => (
-            <tr key={idx} className="border-b hover:bg-gray-50">
+            <tr key={idx} className={`border-b hover:bg-light-gray/30`}>
               {columns.map((col: any) => (
-                <td key={col.key} className="px-4 py-2">
-                  {col.key == "index"
-                    ? idx + 1
-                    : renderCell(row[col.key], col.type)}
+                <td key={col.key} className="px-6 py-2">
+                  {col.key == "index" ? (
+                    <Text className="text-primary-text text-md text-center bg-error">{idx + 1}</Text>
+                  ) : (
+                    <Text className="text-primary-text text-md">
+                      {renderCell(row[col.key], col.type)}
+                    </Text>
+                  )}
                 </td>
               ))}
             </tr>

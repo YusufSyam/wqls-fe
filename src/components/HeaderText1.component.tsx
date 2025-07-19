@@ -10,11 +10,11 @@ export interface IHeaderText1 {
 const HeaderText1: React.FC<IHeaderText1> = ({ title, subTitle }) => {
   return (
     <Stack className="gap-0">
-      <Text className="font-poppins text-primary-text text-2xl">
+      <Text className="font-quicksand-semibold text-primary-text text-4xl">
         {title}
       </Text>
       {subTitle && (
-        <Text className=" text-secondary-text">
+        <Text className=" text-secondary-text -mt-2 text-md ml-[1px]">
           {subTitle}
         </Text>
       )}

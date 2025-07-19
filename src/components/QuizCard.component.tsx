@@ -5,7 +5,6 @@ import { Group, Stack, Text, useMantineTheme } from "@mantine/core";
 import Link from "next/link";
 import React from "react";
 import { IconRenderer } from "./icons/IconRenderer.component";
-import { themeColors } from "@/utils/constants/themes.const";
 
 const QuizCard: React.FC<IQuizzesWithStats> = ({
   bidang,
@@ -24,12 +23,12 @@ const QuizCard: React.FC<IQuizzesWithStats> = ({
       href={`${ROUTES.LEADERBOARD}/${bidang?.toLowerCase()}`}
       className="relative"
     >
-      <div className="w-full h-full absolute bg-light-blue -z-50 -left-2 -bottom-2 rounded-lg"></div>
+      <div className="w-full h-full absolute bg-light-blue -z-50 -left-2 -bottom-2 rounded-lg hover:tran"></div>
       <Stack className="py-4 px-6 w-full rounded-lg bg-dark-blue overflow-hidden relative">
         <IconRenderer
           iconName={bidang}
           size={44}
-          color={themeColors?.['light-blue']?.[5]+"44"}
+          color={theme?.colors['light-blue'][5]+"44"}
           className="absolute right-4 top-5"
         />
         <Stack className="gap-0 z-10">

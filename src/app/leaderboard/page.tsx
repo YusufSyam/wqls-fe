@@ -6,6 +6,7 @@ import {
 } from "@/api/leaderboard.api";
 import { getQuizzesListWithStats } from "@/api/quiz.api";
 import HeaderText1 from "@/components/HeaderText1.component";
+import Loading from "@/components/Loading.component";
 import MyTable, { IMyTableColumn } from "@/components/MyTable.component";
 import QuizCard from "@/components/QuizCard.component";
 import { dummyLeaderboard } from "@/utils/constants/dummies.const";
@@ -65,6 +66,7 @@ const LeaderboardPage: React.FC<ILeaderboardPage> = ({}) => {
 
   useEffect(() => {
     const fetchQuizzes = async () => {
+      setLoading(true);
       try {
         const data: IQuizzesWithStats[] = await getQuizzesListWithStats();
         console.log("data leaderboard", data);
@@ -81,18 +83,29 @@ const LeaderboardPage: React.FC<ILeaderboardPage> = ({}) => {
 
   console.log("quizzes", quizzes);
   return (
-    <Stack>
-      <HeaderText1 title="Leaderboard" />
+    <Stack className="gap-8">
+      <HeaderText1
+        title="Daftar Subjek"
+        subTitle="Pilih salah satu dari subjek di bawah untuk melihat leaderboard"
+      />
       {/* <MyTable columns={columns} data={leaderboard} /> */}
-      <Grid gutter={"xl"}>
-        {quizzes?.map((quiz: IQuizzesWithStats) => {
-          return (
-            <Grid.Col key={quiz?.id} span={4}>
-              <QuizCard {...quiz} />
-            </Grid.Col>
-          );
-        })}
-      </Grid>
+      {loading ? (
+        <Loading />
+      ) : (
+        <Grid gutter={32}>
+          {quizzes?.map((quiz: IQuizzesWithStats) => {
+            return (
+              <Grid.Col
+                key={quiz?.id}
+                span={4}
+                className="hover:translate-x-1 hover:-translate-y-1 transition-all duration-200 ease-linear"
+              >
+                <QuizCard {...quiz} />
+              </Grid.Col>
+            );
+          })}
+        </Grid>
+      )}
 
       <Stack></Stack>
     </Stack>

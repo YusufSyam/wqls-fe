@@ -3,14 +3,13 @@ import {
   IconAstronomyOutlinedRounded,
   IconBiologyOutlinedRounded,
   IconComputerOutlinedRounded,
-  IconEarthOutlined,
   IconEarthOutlinedRounded,
   IconEconomyOutlinedRounded,
   IconGeographyOutlinedRounded,
   IconMathOutlinedRounded,
   IconPhysicsOutlinedRounded,
   IFluentProps,
-} from "@/components/icons/icons.component";
+} from "@/components/icons/Icons.component";
 import { JSX } from "react";
 
 export const QUIZ_SUBJECT: TQuizSubject[] = [

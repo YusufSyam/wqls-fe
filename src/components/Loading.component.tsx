@@ -8,8 +8,8 @@ export interface ILoading {
 const Loading : React.FC<ILoading> = ({size="xl"}) => {
   const theme= useMantineTheme();
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <Loader size={size} variant="oval" />
+    <div className="w-full h-full flex items-center justify-center mt-4">
+      <Loader size={size} variant="oval" color={theme?.colors?.['dark-blue'][5]} />
     </div>
   );
 };
