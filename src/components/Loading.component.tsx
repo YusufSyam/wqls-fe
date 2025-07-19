@@ -1,16 +1,28 @@
-import { Loader, MantineSize, useMantineTheme } from "@mantine/core";
-import React from 'react';
+import {
+  Loader,
+  MantineSize,
+  Stack,
+  Text,
+  useMantineTheme,
+} from "@mantine/core";
+import React from "react";
 
 export interface ILoading {
-  size?: MantineSize,
+  size?: MantineSize;
+  message?: string;
 }
 
-const Loading : React.FC<ILoading> = ({size="xl"}) => {
-  const theme= useMantineTheme();
+const Loading: React.FC<ILoading> = ({ size = "xl", message= "Sedang mengambil data, harap bersabar..." }) => {
+  const theme = useMantineTheme();
   return (
-    <div className="w-full h-full flex items-center justify-center mt-4">
-      <Loader size={size} variant="oval" color={theme?.colors?.['dark-blue'][5]} />
-    </div>
+    <Stack className="w-full h-full items-center justify-center mb-4 mt-10 self-center">
+      <Loader
+        size={size}
+        variant="oval"
+        color={theme?.colors?.["dark-blue"][5]}
+      />
+      <Text className="text-secondary-text text-md">{message}</Text>
+    </Stack>
   );
 };
 

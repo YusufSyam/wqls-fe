@@ -18,15 +18,15 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col">
         <AuthProvider>
-          <header className="bg-white shadow py-4 px-48">
+          <header className="py-4 px-40 bg-[#EEEEEE]">
             <HeaderLayout />
           </header>
 
-          <main className="mx-48 py-10">
+          <main className="">
             <ClientLayout>{children}</ClientLayout>
           </main>
 
-          <footer className="text-center text-sm text-gray-500 mt-12 pb-4">
+          <footer className="text-center text-sm text-gray-500 mt-96 pb-4">
             © 2025 Pejuang OSN. All rights reserved.
           </footer>
         </AuthProvider>

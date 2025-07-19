@@ -108,5 +108,3 @@ export const themeColors : any = {
             "#FDF5AA",
           ]
         }
-
-export const DETAIL_PAYMENT_PASSWORD= "yusuf"

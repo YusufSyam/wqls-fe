@@ -9,7 +9,7 @@ export interface IFluentProps {
 export const IconColorScheme = {
   primaryText: "#334155",
   secondaryText: "#808fa4",
-  primary: "#5f5af7", 
+  primary: "#5f5af7",
   secondary: "#deddf1",
   error: "#ff2c56",
   background: "#ffffff",
@@ -18,7 +18,8 @@ export const IconColorScheme = {
 } as const;
 
 // 👇 ini bikin tipe union dari semua nilai literal:
-export type TIconColorScheme = (typeof IconColorScheme)[keyof typeof IconColorScheme];
+export type TIconColorScheme =
+  (typeof IconColorScheme)[keyof typeof IconColorScheme];
 
 export function IconLogoutOutline({
   size = 24,
@@ -1517,23 +1518,23 @@ export function IconLibraryBookFilled({
 
 export function IconBackArrowOutlineRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='m343.28-422.65 176.35 176.58q16.96 16.96 17.08 40.52.12 23.55-17.08 40.51-16.96 16.95-40.51 16.95-23.55 0-40.51-17.19L164.28-439.37q-8.24-8.48-12.21-18.31-3.98-9.84-3.98-21.56 0-11.48 3.98-21.31 3.97-9.84 12.21-18.32l276.33-276.09q16.96-17.19 40.39-17.19t40.39 17.19q17.2 16.96 17.2 40.51 0 23.56-17.2 40.52l-178.11 178.1h435.48q23.67 0 40.13 16.58t16.46 40.01q0 23.67-16.46 40.13t-40.13 16.46H343.28Z'
-      fill={color}
+        d="m343.28-422.65 176.35 176.58q16.96 16.96 17.08 40.52.12 23.55-17.08 40.51-16.96 16.95-40.51 16.95-23.55 0-40.51-17.19L164.28-439.37q-8.24-8.48-12.21-18.31-3.98-9.84-3.98-21.56 0-11.48 3.98-21.31 3.97-9.84 12.21-18.32l276.33-276.09q16.96-17.19 40.39-17.19t40.39 17.19q17.2 16.96 17.2 40.51 0 23.56-17.2 40.52l-178.11 178.1h435.48q23.67 0 40.13 16.58t16.46 40.01q0 23.67-16.46 40.13t-40.13 16.46H343.28Z"
+        fill={color}
       />
     </svg>
   );
@@ -1541,23 +1542,23 @@ export function IconBackArrowOutlineRounded({
 
 export function IconRightArrowTailedOutlinedRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M602.69-418.09H181.57q-25.96 0-43.72-17.76-17.76-17.76-17.76-43.72 0-25.39 17.76-43.43t43.72-18.04h421.12L435.35-708.39q-18.26-18.26-18.55-43.94-.28-25.67 18.55-43.93 18.26-18.26 43.93-18.26 25.68 0 43.94 18.82L796.7-522.78q8.56 9.13 13.19 20.11 4.63 10.97 4.63 23.1 0 12.7-4.63 23.68t-13.19 20.11L524.09-163.74q-18.26 18.83-43.66 18.83-25.39 0-43.65-18.83-18.82-18.26-18.82-43.93 0-25.68 18.82-43.94l165.91-166.48Z'
-      fill={color}
+        d="M602.69-418.09H181.57q-25.96 0-43.72-17.76-17.76-17.76-17.76-43.72 0-25.39 17.76-43.43t43.72-18.04h421.12L435.35-708.39q-18.26-18.26-18.55-43.94-.28-25.67 18.55-43.93 18.26-18.26 43.93-18.26 25.68 0 43.94 18.82L796.7-522.78q8.56 9.13 13.19 20.11 4.63 10.97 4.63 23.1 0 12.7-4.63 23.68t-13.19 20.11L524.09-163.74q-18.26 18.83-43.66 18.83-25.39 0-43.65-18.83-18.82-18.26-18.82-43.93 0-25.68 18.82-43.94l165.91-166.48Z"
+        fill={color}
       />
     </svg>
   );
@@ -1565,23 +1566,23 @@ export function IconRightArrowTailedOutlinedRounded({
 
 export function IconCodeOutlinedRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M311.49-219.71 49.54-481.77l264.29-264.29 68.85 68.96L188.14-482l193.11 192.54-69.76 69.75Zm335.68 1.9-68.71-69.29 195.21-195.2-193.1-193.11 67.94-67.75 262.62 261.39-263.96 263.96Z'
-      fill={color}
+        d="M311.49-219.71 49.54-481.77l264.29-264.29 68.85 68.96L188.14-482l193.11 192.54-69.76 69.75Zm335.68 1.9-68.71-69.29 195.21-195.2-193.1-193.11 67.94-67.75 262.62 261.39-263.96 263.96Z"
+        fill={color}
       />
     </svg>
   );
@@ -1589,34 +1590,33 @@ export function IconCodeOutlinedRounded({
 
 export function IconListViewFilledRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M897.83-486.61ZM117.22-658.43q-24.06 0-39.55-16.06-15.5-16.05-15.5-38.99v-49.17q0-22.94 15.5-38.71 15.49-15.77 39.55-15.77h75.61q22.94 0 38.71 15.77 15.76 15.77 15.76 38.71v49.17q0 22.94-15.76 38.99-15.77 16.06-38.71 16.06h-75.61Zm315.91 0q-22.52 0-38-16.06-15.48-16.05-15.48-38.99v-49.17q0-22.94 15.48-38.71t38-15.77h409.65q23.51 0 39.28 15.77t15.77 38.71v49.17q0 22.94-15.77 38.99-15.77 16.06-39.28 16.06H433.13Zm0 251.39q-22.52 0-38-15.77t-15.48-39.28v-49.04q0-22.94 15.48-38.99t38-16.05h409.65q23.51 0 39.28 16.05t15.77 38.99v49.04q0 23.51-15.77 39.28t-39.28 15.77H433.13Zm0 251.52q-22.52 0-38-15.77t-15.48-39.28v-49.17q0-22.94 15.48-38.71t38-15.77h409.65q23.51 0 39.28 15.77t15.77 38.71v49.17q0 23.51-15.77 39.28t-39.28 15.77H433.13Zm-315.91 0q-24.06 0-39.55-15.77-15.5-15.77-15.5-39.28v-49.17q0-22.94 15.5-38.71 15.49-15.77 39.55-15.77h75.61q22.94 0 38.71 15.77 15.76 15.77 15.76 38.71v49.17q0 23.51-15.76 39.28-15.77 15.77-38.71 15.77h-75.61Zm0-251.52q-24.06 0-39.55-15.77-15.5-15.77-15.5-39.28v-49.04q0-22.94 15.5-38.99 15.49-16.05 39.55-16.05h75.61q22.94 0 38.71 16.05 15.76 16.05 15.76 38.99v49.04q0 23.51-15.76 39.28-15.77 15.77-38.71 15.77h-75.61Z'
-      fill={color}
+        d="M897.83-486.61ZM117.22-658.43q-24.06 0-39.55-16.06-15.5-16.05-15.5-38.99v-49.17q0-22.94 15.5-38.71 15.49-15.77 39.55-15.77h75.61q22.94 0 38.71 15.77 15.76 15.77 15.76 38.71v49.17q0 22.94-15.76 38.99-15.77 16.06-38.71 16.06h-75.61Zm315.91 0q-22.52 0-38-16.06-15.48-16.05-15.48-38.99v-49.17q0-22.94 15.48-38.71t38-15.77h409.65q23.51 0 39.28 15.77t15.77 38.71v49.17q0 22.94-15.77 38.99-15.77 16.06-39.28 16.06H433.13Zm0 251.39q-22.52 0-38-15.77t-15.48-39.28v-49.04q0-22.94 15.48-38.99t38-16.05h409.65q23.51 0 39.28 16.05t15.77 38.99v49.04q0 23.51-15.77 39.28t-39.28 15.77H433.13Zm0 251.52q-22.52 0-38-15.77t-15.48-39.28v-49.17q0-22.94 15.48-38.71t38-15.77h409.65q23.51 0 39.28 15.77t15.77 38.71v49.17q0 23.51-15.77 39.28t-39.28 15.77H433.13Zm-315.91 0q-24.06 0-39.55-15.77-15.5-15.77-15.5-39.28v-49.17q0-22.94 15.5-38.71 15.49-15.77 39.55-15.77h75.61q22.94 0 38.71 15.77 15.76 15.77 15.76 38.71v49.17q0 23.51-15.76 39.28-15.77 15.77-38.71 15.77h-75.61Zm0-251.52q-24.06 0-39.55-15.77-15.5-15.77-15.5-39.28v-49.04q0-22.94 15.5-38.99 15.49-16.05 39.55-16.05h75.61q22.94 0 38.71 16.05 15.76 16.05 15.76 38.99v49.04q0 23.51-15.76 39.28-15.77 15.77-38.71 15.77h-75.61Z"
+        fill={color}
       />
     </svg>
   );
 }
 
-
 export function IconTempCar({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1640,7 +1640,7 @@ export function IconInformationCircleOutline({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1664,7 +1664,7 @@ export function IconCircleFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1688,7 +1688,7 @@ export function IconRightArrow({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1712,7 +1712,7 @@ export function IconCheckOutline({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1736,7 +1736,7 @@ export function IconCloseOutline({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1760,7 +1760,7 @@ export function IconPersonFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1784,7 +1784,7 @@ export function IconProgressClockOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1808,7 +1808,7 @@ export function IconWeatherPartlyCloudyOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1832,7 +1832,7 @@ export function IconWeatherThunderStormOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1856,7 +1856,7 @@ export function IconWeatherRainyOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1880,7 +1880,7 @@ export function IconWeatherCloudyOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1904,7 +1904,7 @@ export function IconWeatherSunnyOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1928,7 +1928,7 @@ export function IconWeatherPartlyCloudyFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1952,7 +1952,7 @@ export function IconWeatherThunderStormFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -1976,7 +1976,7 @@ export function IconWeatherRainyFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2000,7 +2000,7 @@ export function IconWeatherCloudyFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2024,7 +2024,7 @@ export function IconWeatherSunnyFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2048,7 +2048,7 @@ export function IconBellFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2072,7 +2072,7 @@ export function IconBellOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2096,7 +2096,7 @@ export function IconVideoFill({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2120,7 +2120,7 @@ export function IconVideoOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2144,7 +2144,7 @@ export function IconCameraOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2168,7 +2168,7 @@ export function IconCameraFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2192,7 +2192,7 @@ export function IconSearchOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2216,7 +2216,7 @@ export function IconChangeCircleOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2240,7 +2240,7 @@ export function IconTrafficOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2264,7 +2264,7 @@ export function IconEarthOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2288,7 +2288,7 @@ export function IconFileOutline({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2312,7 +2312,7 @@ export function IconDownArrowNoTailOutline({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2336,7 +2336,7 @@ export function IconUpArrowNoTailOutline({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2360,7 +2360,7 @@ export function IconAddFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2384,7 +2384,7 @@ export function IconCalendarLtrOutline({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2408,7 +2408,7 @@ export function IconCalendarEmptyOutline({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2432,7 +2432,7 @@ export function IconReportFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2456,7 +2456,7 @@ export function IconReportOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2480,7 +2480,7 @@ export function IconFilterListOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2504,7 +2504,7 @@ export function IconFilterOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2528,7 +2528,7 @@ export function IconFilterFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2552,7 +2552,7 @@ export function IconInformationOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2576,7 +2576,7 @@ export function IconInformationCircleFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2600,7 +2600,7 @@ export function IconQuestionMarkCircleFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2624,7 +2624,7 @@ export function IconRightArrowNoTail({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2648,7 +2648,7 @@ export function DeleteOutline({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2714,7 +2714,7 @@ export function IconTrashOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2738,7 +2738,7 @@ export function IconTrashFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2762,7 +2762,7 @@ export function IconEditOutlined({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2786,7 +2786,7 @@ export function IconEditFilled({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2810,7 +2810,7 @@ export function IconHomeFiledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2834,7 +2834,7 @@ export function IconStarFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2858,7 +2858,7 @@ export function IconGridViewFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2882,7 +2882,7 @@ export function IconExpandOutlinedRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2906,7 +2906,7 @@ export function IconSearchFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2930,7 +2930,7 @@ export function IconRadarFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2954,7 +2954,7 @@ export function IconDocumentScannerFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -2978,7 +2978,7 @@ export function IconDocumentFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3002,7 +3002,7 @@ export function IconLeftArrowRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3026,7 +3026,7 @@ export function IconRightArrowRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3050,7 +3050,7 @@ export function IconVideoFillRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3074,7 +3074,7 @@ export function IconAutomaticFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3098,7 +3098,7 @@ export function IconAutomaticOutlinedRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3121,7 +3121,7 @@ export function IconTrafficFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3145,7 +3145,7 @@ export function IconDisplaySettingsFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3169,7 +3169,7 @@ export function IconPrecisionManufacturingFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3193,7 +3193,7 @@ export function IconPolicyFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3217,7 +3217,7 @@ export function IconSpeedMeterOutlinedRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3239,23 +3239,23 @@ export function IconSpeedMeterOutlinedRounded({
 
 export function IconStopFilledRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M322.87-231.869q-37.538 0-64.269-26.732-26.732-26.731-26.732-64.269v-314.26q0-37.538 26.732-64.269 26.731-26.732 64.269-26.732h314.26q37.538 0 64.269 26.732 26.732 26.731 26.732 64.269v314.26q0 37.538-26.732 64.269-26.731 26.732-64.269 26.732H322.87Z'
-      fill={color}
+        d="M322.87-231.869q-37.538 0-64.269-26.732-26.732-26.731-26.732-64.269v-314.26q0-37.538 26.732-64.269 26.731-26.732 64.269-26.732h314.26q37.538 0 64.269 26.732 26.732 26.731 26.732 64.269v314.26q0 37.538-26.732 64.269-26.731 26.732-64.269 26.732H322.87Z"
+        fill={color}
       />
     </svg>
   );
@@ -3263,23 +3263,23 @@ export function IconStopFilledRounded({
 
 export function IconPlayFilledRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M381.478-229.674q-22.869 14.674-46.239 1.739-23.37-12.934-23.37-40.282v-423.566q0-27.348 23.37-40.282 23.37-12.935 46.239 1.739l333.174 211.782q20.631 13.674 20.631 38.664 0 24.989-20.631 38.424L381.478-229.674Z'
-      fill={color}
+        d="M381.478-229.674q-22.869 14.674-46.239 1.739-23.37-12.934-23.37-40.282v-423.566q0-27.348 23.37-40.282 23.37-12.935 46.239 1.739l333.174 211.782q20.631 13.674 20.631 38.664 0 24.989-20.631 38.424L381.478-229.674Z"
+        fill={color}
       />
     </svg>
   );
@@ -3287,23 +3287,23 @@ export function IconPlayFilledRounded({
 
 export function IconTuneFilledRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M480-120q-17 0-28.5-11.5T440-160v-160q0-17 11.5-28.5T480-360q17 0 28.5 11.5T520-320v40h280q17 0 28.5 11.5T840-240q0 17-11.5 28.5T800-200H520v40q0 17-11.5 28.5T480-120Zm-320-80q-17 0-28.5-11.5T120-240q0-17 11.5-28.5T160-280h160q17 0 28.5 11.5T360-240q0 17-11.5 28.5T320-200H160Zm160-160q-17 0-28.5-11.5T280-400v-40H160q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h120v-40q0-17 11.5-28.5T320-600q17 0 28.5 11.5T360-560v160q0 17-11.5 28.5T320-360Zm160-80q-17 0-28.5-11.5T440-480q0-17 11.5-28.5T480-520h320q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H480Zm160-160q-17 0-28.5-11.5T600-640v-160q0-17 11.5-28.5T640-840q17 0 28.5 11.5T680-800v40h120q17 0 28.5 11.5T840-720q0 17-11.5 28.5T800-680H680v40q0 17-11.5 28.5T640-600Zm-480-80q-17 0-28.5-11.5T120-720q0-17 11.5-28.5T160-760h320q17 0 28.5 11.5T520-720q0 17-11.5 28.5T480-680H160Z'
-      fill={color}
+        d="M480-120q-17 0-28.5-11.5T440-160v-160q0-17 11.5-28.5T480-360q17 0 28.5 11.5T520-320v40h280q17 0 28.5 11.5T840-240q0 17-11.5 28.5T800-200H520v40q0 17-11.5 28.5T480-120Zm-320-80q-17 0-28.5-11.5T120-240q0-17 11.5-28.5T160-280h160q17 0 28.5 11.5T360-240q0 17-11.5 28.5T320-200H160Zm160-160q-17 0-28.5-11.5T280-400v-40H160q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h120v-40q0-17 11.5-28.5T320-600q17 0 28.5 11.5T360-560v160q0 17-11.5 28.5T320-360Zm160-80q-17 0-28.5-11.5T440-480q0-17 11.5-28.5T480-520h320q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H480Zm160-160q-17 0-28.5-11.5T600-640v-160q0-17 11.5-28.5T640-840q17 0 28.5 11.5T680-800v40h120q17 0 28.5 11.5T840-720q0 17-11.5 28.5T800-680H680v40q0 17-11.5 28.5T640-600Zm-480-80q-17 0-28.5-11.5T120-720q0-17 11.5-28.5T160-760h320q17 0 28.5 11.5T520-720q0 17-11.5 28.5T480-680H160Z"
+        fill={color}
       />
     </svg>
   );
@@ -3311,23 +3311,23 @@ export function IconTuneFilledRounded({
 
 export function IconPencilFilledRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M160-120q-17 0-28.5-11.5T120-160v-97q0-16 6-30.5t17-25.5l505-504q11-11 26-17t31-6q16 0 30.5 6t26.5 18l55 56q12 11 17.5 25.5T840-704q0 15-5.5 30T817-647L313-143q-11 11-25.5 17t-30.5 6h-97Zm544-528 56-56-56-56-56 56 56 56Z'
-      fill={color}
+        d="M160-120q-17 0-28.5-11.5T120-160v-97q0-16 6-30.5t17-25.5l505-504q11-11 26-17t31-6q16 0 30.5 6t26.5 18l55 56q12 11 17.5 25.5T840-704q0 15-5.5 30T817-647L313-143q-11 11-25.5 17t-30.5 6h-97Zm544-528 56-56-56-56-56 56 56 56Z"
+        fill={color}
       />
     </svg>
   );
@@ -3335,23 +3335,23 @@ export function IconPencilFilledRounded({
 
 export function IconPencilOutlinedRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M200-200h56l392-391-29-29-28-28-391 392v56Zm-40 80q-17 0-28.5-11.5T120-160v-97q0-16 6-30.5t17-25.5l505-504q11-11 26-17t31-6q16 0 30.5 6t26.5 18l55 56q12 11 17.5 25.5T840-704q0 15-5.5 30T817-647L313-143q-11 11-25.5 17t-30.5 6h-97Zm600-584-56-56 56 56ZM648-591l-29-29-28-28 57 57Z'
-      fill={color}
+        d="M200-200h56l392-391-29-29-28-28-391 392v56Zm-40 80q-17 0-28.5-11.5T120-160v-97q0-16 6-30.5t17-25.5l505-504q11-11 26-17t31-6q16 0 30.5 6t26.5 18l55 56q12 11 17.5 25.5T840-704q0 15-5.5 30T817-647L313-143q-11 11-25.5 17t-30.5 6h-97Zm600-584-56-56 56 56ZM648-591l-29-29-28-28 57 57Z"
+        fill={color}
       />
     </svg>
   );
@@ -3359,23 +3359,23 @@ export function IconPencilOutlinedRounded({
 
 export function IconTrashFilledRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M280-120q-33 0-56.5-23.5T200-200v-520q-17 0-28.5-11.5T160-760q0-17 11.5-28.5T200-800h160q0-17 11.5-28.5T400-840h160q17 0 28.5 11.5T600-800h160q17 0 28.5 11.5T800-760q0 17-11.5 28.5T760-720v520q0 33-23.5 56.5T680-120H280Zm80-160h80v-360h-80v360Zm160 0h80v-360h-80v360Z'
-      fill={color}
+        d="M280-120q-33 0-56.5-23.5T200-200v-520q-17 0-28.5-11.5T160-760q0-17 11.5-28.5T200-800h160q0-17 11.5-28.5T400-840h160q17 0 28.5 11.5T600-800h160q17 0 28.5 11.5T800-760q0 17-11.5 28.5T760-720v520q0 33-23.5 56.5T680-120H280Zm80-160h80v-360h-80v360Zm160 0h80v-360h-80v360Z"
+        fill={color}
       />
     </svg>
   );
@@ -3383,23 +3383,23 @@ export function IconTrashFilledRounded({
 
 export function IconTrashOutlinedRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M280-120q-33 0-56.5-23.5T200-200v-520q-17 0-28.5-11.5T160-760q0-17 11.5-28.5T200-800h160q0-17 11.5-28.5T400-840h160q17 0 28.5 11.5T600-800h160q17 0 28.5 11.5T800-760q0 17-11.5 28.5T760-720v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z'
-      fill={color}
+        d="M280-120q-33 0-56.5-23.5T200-200v-520q-17 0-28.5-11.5T160-760q0-17 11.5-28.5T200-800h160q0-17 11.5-28.5T400-840h160q17 0 28.5 11.5T600-800h160q17 0 28.5 11.5T800-760q0 17-11.5 28.5T760-720v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+        fill={color}
       />
     </svg>
   );
@@ -3407,23 +3407,23 @@ export function IconTrashOutlinedRounded({
 
 export function IconCarFilledRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M240-200v20q0 25-17.5 42.5T180-120q-25 0-42.5-17.5T120-180v-286q0-7 1-14t3-13l75-213q8-24 29-39t47-15h410q26 0 47 15t29 39l75 213q2 6 3 13t1 14v286q0 25-17.5 42.5T780-120q-25 0-42.5-17.5T720-180v-20H240Zm-8-360h496l-42-120H274l-42 120Zm68 240q25 0 42.5-17.5T360-380q0-25-17.5-42.5T300-440q-25 0-42.5 17.5T240-380q0 25 17.5 42.5T300-320Zm360 0q25 0 42.5-17.5T720-380q0-25-17.5-42.5T660-440q-25 0-42.5 17.5T600-380q0 25 17.5 42.5T660-320Z'
-      fill={color}
+        d="M240-200v20q0 25-17.5 42.5T180-120q-25 0-42.5-17.5T120-180v-286q0-7 1-14t3-13l75-213q8-24 29-39t47-15h410q26 0 47 15t29 39l75 213q2 6 3 13t1 14v286q0 25-17.5 42.5T780-120q-25 0-42.5-17.5T720-180v-20H240Zm-8-360h496l-42-120H274l-42 120Zm68 240q25 0 42.5-17.5T360-380q0-25-17.5-42.5T300-440q-25 0-42.5 17.5T240-380q0 25 17.5 42.5T300-320Zm360 0q25 0 42.5-17.5T720-380q0-25-17.5-42.5T660-440q-25 0-42.5 17.5T600-380q0 25 17.5 42.5T660-320Z"
+        fill={color}
       />
     </svg>
   );
@@ -3431,23 +3431,23 @@ export function IconCarFilledRounded({
 
 export function IconArticleFilledRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M192.32-95.88q-39.43 0-67.94-28.5-28.5-28.51-28.5-67.94v-575.36q0-39.59 28.5-68.2 28.51-28.61 67.94-28.61h575.36q39.59 0 68.2 28.61t28.61 68.2v575.36q0 39.43-28.61 67.94-28.61 28.5-68.2 28.5H192.32ZM276-278.1h285.93v-74.96H276v74.96Zm0-164.52h408.38v-74.96H276v74.96Zm0-165.47h408.38v-74.95H276v74.95Z'
-      fill={color}
+        d="M192.32-95.88q-39.43 0-67.94-28.5-28.5-28.51-28.5-67.94v-575.36q0-39.59 28.5-68.2 28.51-28.61 67.94-28.61h575.36q39.59 0 68.2 28.61t28.61 68.2v575.36q0 39.43-28.61 67.94-28.61 28.5-68.2 28.5H192.32ZM276-278.1h285.93v-74.96H276v74.96Zm0-164.52h408.38v-74.96H276v74.96Zm0-165.47h408.38v-74.95H276v74.95Z"
+        fill={color}
       />
     </svg>
   );
@@ -3455,23 +3455,23 @@ export function IconArticleFilledRounded({
 
 export function IconInventoryFilledRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M620.77-145.7 443.91-322.55l65.74-66.3 111.12 111.11 229.98-229.98 65.74 65.73L620.77-145.7Zm245.46-424.71h-96.81v-201.31h-63.46v120.63H254.04v-120.63h-63.46v579.4h242.65v96.44H190.58q-40.8 0-68.62-27.71-27.81-27.7-27.81-68.73v-579.4q0-41.03 27.3-68.92 27.31-27.9 69.13-27.9h169.01q13.05-35.91 45.88-59.09 32.83-23.18 74.98-23.18 41.1 0 73.99 22.9 32.89 22.9 47.55 59.37h167.43q41.82 0 69.32 27.9 27.49 27.89 27.49 68.92v201.31ZM480.72-778.9q16.05 0 27.88-11.97 11.83-11.97 11.83-28.31 0-16.72-11.83-28.22t-28.17-11.5q-16.43 0-28.21 11.5-11.79 11.5-11.79 28.5 0 16.06 11.79 28.03 11.78 11.97 28.5 11.97Z'
-      fill={color}
+        d="M620.77-145.7 443.91-322.55l65.74-66.3 111.12 111.11 229.98-229.98 65.74 65.73L620.77-145.7Zm245.46-424.71h-96.81v-201.31h-63.46v120.63H254.04v-120.63h-63.46v579.4h242.65v96.44H190.58q-40.8 0-68.62-27.71-27.81-27.7-27.81-68.73v-579.4q0-41.03 27.3-68.92 27.31-27.9 69.13-27.9h169.01q13.05-35.91 45.88-59.09 32.83-23.18 74.98-23.18 41.1 0 73.99 22.9 32.89 22.9 47.55 59.37h167.43q41.82 0 69.32 27.9 27.49 27.89 27.49 68.92v201.31ZM480.72-778.9q16.05 0 27.88-11.97 11.83-11.97 11.83-28.31 0-16.72-11.83-28.22t-28.17-11.5q-16.43 0-28.21 11.5-11.79 11.5-11.79 28.5 0 16.06 11.79 28.03 11.78 11.97 28.5 11.97Z"
+        fill={color}
       />
     </svg>
   );
@@ -3479,23 +3479,23 @@ export function IconInventoryFilledRounded({
 
 export function IconPackageFilledRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M440.43-43.96v-415.43L80.09-664.22v342.57q0 32.95 16.26 61.69 16.26 28.74 45.22 45l298.86 171Zm80-1 297.57-170q28.96-16.26 45.22-45 16.26-28.74 16.26-61.69v-344.7L520.43-461.83v416.87Zm181.14-611.87 134.65-76.39-295.18-169.3q-28.52-16.26-61.04-16.26-32.52 0-61.48 16.26l-72.61 41.3 355.66 204.39ZM478-529.26l142-81-354.22-204.96-143.56 82.57L478-529.26Z'
-      fill={color}
+        d="M440.43-43.96v-415.43L80.09-664.22v342.57q0 32.95 16.26 61.69 16.26 28.74 45.22 45l298.86 171Zm80-1 297.57-170q28.96-16.26 45.22-45 16.26-28.74 16.26-61.69v-344.7L520.43-461.83v416.87Zm181.14-611.87 134.65-76.39-295.18-169.3q-28.52-16.26-61.04-16.26-32.52 0-61.48 16.26l-72.61 41.3 355.66 204.39ZM478-529.26l142-81-354.22-204.96-143.56 82.57L478-529.26Z"
+        fill={color}
       />
     </svg>
   );
@@ -3505,7 +3505,7 @@ export function IconAddFilledRounded({
   size = 24,
   color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
@@ -3527,241 +3527,312 @@ export function IconAddFilledRounded({
 
 export function IconSentFilledRounded({
   size = 24,
-  color = 'black',
+  color = "black",
   onClick,
-  className
+  className,
 }: IFluentProps) {
   return (
     <svg
-      width={size+`px`}
-      height={size+`px`}
+      width={size + `px`}
+      height={size + `px`}
       viewBox={`0 -960 960 960`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-      d='M176.24-178.7q-22.87 9.44-43.26-3.85-20.39-13.3-20.39-38.17V-393.3l331-86.7-331-86.7v-172.58q0-24.87 20.39-38.17 20.39-13.29 43.26-3.85l613.61 259.28q28.11 12.43 28.11 42.02 0 29.59-28.11 42.02L176.24-178.7Z'
-      fill={color}
+        d="M176.24-178.7q-22.87 9.44-43.26-3.85-20.39-13.3-20.39-38.17V-393.3l331-86.7-331-86.7v-172.58q0-24.87 20.39-38.17 20.39-13.29 43.26-3.85l613.61 259.28q28.11 12.43 28.11 42.02 0 29.59-28.11 42.02L176.24-178.7Z"
+        fill={color}
       />
     </svg>
   );
 }
 
 export function IconAlchemyOutlinedRounded({
-    size = 24,
-    color = 'black',
-    onClick,
-    className
+  size = 24,
+  color = "black",
+  onClick,
+  className,
 }: IFluentProps) {
-    return (
-        <svg
-            width={size+`px`}
-            height={size+`px`}
-            viewBox={`0 -960 960 960`}
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            onClick={onClick}
-            className={className}
-        >
-            <path
-            d='M181.33-104.17q-55.21 0-78.36-50.12-23.14-50.12 13.64-92.36l235.56-272.34v-243.6h-33.49q-18.5 0-31.29-12.82-12.78-12.82-12.78-31.37t12.78-31.26q12.79-12.7 31.29-12.7h322.64q18.5 0 31.47 12.82 12.98 12.82 12.98 31.37t-12.98 31.25q-12.97 12.71-31.47 12.71H608.2v243.6l235.57 272.34q36.4 42.24 13.26 92.36-23.15 50.12-78.36 50.12H181.33Zm85.77-121.48h426.18L550.7-391.01H409.68L267.1-225.65Zm-81.33 33.33h588.84L519.68-486.88v-275.71h-79.36v275.71L185.77-192.32ZM480-477.55Z'
-            fill={color}
-            />
-        </svg>
-    );
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M181.33-104.17q-55.21 0-78.36-50.12-23.14-50.12 13.64-92.36l235.56-272.34v-243.6h-33.49q-18.5 0-31.29-12.82-12.78-12.82-12.78-31.37t12.78-31.26q12.79-12.7 31.29-12.7h322.64q18.5 0 31.47 12.82 12.98 12.82 12.98 31.37t-12.98 31.25q-12.97 12.71-31.47 12.71H608.2v243.6l235.57 272.34q36.4 42.24 13.26 92.36-23.15 50.12-78.36 50.12H181.33Zm85.77-121.48h426.18L550.7-391.01H409.68L267.1-225.65Zm-81.33 33.33h588.84L519.68-486.88v-275.71h-79.36v275.71L185.77-192.32ZM480-477.55Z"
+        fill={color}
+      />
+    </svg>
+  );
 }
 
 export function IconComputerOutlinedRounded({
-    size = 24,
-    color = 'black',
-    onClick,
-    className
+  size = 24,
+  color = "black",
+  onClick,
+  className,
 }: IFluentProps) {
-    return (
-        <svg
-            width={size+`px`}
-            height={size+`px`}
-            viewBox={`0 -960 960 960`}
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            onClick={onClick}
-            className={className}
-        >
-            <path
-            d='M67-92.3q-18.92 0-31.72-12.8-12.8-12.8-12.8-31.72 0-18.69 12.8-31.32 12.8-12.64 31.72-12.64h826q18.92 0 31.72 12.64 12.8 12.64 12.8 31.33 0 18.68-12.8 31.59Q911.92-92.3 893-92.3H67Zm99.78-128.48q-44.3 0-75.15-30.85-30.85-30.85-30.85-75.15v-426.44q0-44.3 30.85-75.15 30.85-30.85 75.15-30.85h626.44q44.3 0 75.15 30.85 30.85 30.85 30.85 75.15v426.44q0 44.3-30.85 75.15-30.85 30.85-75.15 30.85H166.78Zm0-106h626.44v-426.44H166.78v426.44Zm0 0v-426.44 426.44Z'
-            fill={color}
-            />
-        </svg>
-    );
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M67-92.3q-18.92 0-31.72-12.8-12.8-12.8-12.8-31.72 0-18.69 12.8-31.32 12.8-12.64 31.72-12.64h826q18.92 0 31.72 12.64 12.8 12.64 12.8 31.33 0 18.68-12.8 31.59Q911.92-92.3 893-92.3H67Zm99.78-128.48q-44.3 0-75.15-30.85-30.85-30.85-30.85-75.15v-426.44q0-44.3 30.85-75.15 30.85-30.85 75.15-30.85h626.44q44.3 0 75.15 30.85 30.85 30.85 30.85 75.15v426.44q0 44.3-30.85 75.15-30.85 30.85-75.15 30.85H166.78Zm0-106h626.44v-426.44H166.78v426.44Zm0 0v-426.44 426.44Z"
+        fill={color}
+      />
+    </svg>
+  );
 }
 
 export function IconGeographyOutlinedRounded({
-    size = 24,
-    color = 'black',
-    onClick,
-    className
+  size = 24,
+  color = "black",
+  onClick,
+  className,
 }: IFluentProps) {
-    return (
-        <svg
-            width={size+`px`}
-            height={size+`px`}
-            viewBox={`0 -960 960 960`}
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            onClick={onClick}
-            className={className}
-        >
-            <path
-            d='M356.48-60.78q-17.39 0-30.44-10.33Q313-81.43 307.87-97.83L207.56-427h-93.78q-22.08 0-37.54-15.46Q60.78-457.91 60.78-480t15.46-37.54Q91.7-533 113.78-533h132.83q17.52 0 31.41 10.33 13.89 10.32 19.02 27.28l50.18 164.13 116.26-526.35q4.13-17.96 17.95-29.78 13.83-11.83 31.79-11.83 17.95 0 31.78 11.33 13.83 11.32 17.96 29.28l77.95 338.69 46.39-138.3q5.7-16.39 19.03-26.43 13.32-10.05 30.28-10.05t30.06 9.26q13.11 9.27 19.81 24.66L835.35-533h11.43q22.09 0 37.55 15.46 15.45 15.45 15.45 37.54t-15.45 37.54Q868.87-427 846.78-427h-42.26q-16.95 0-30.35-9.26-13.39-9.26-19.52-25.22L743-492.69l-59.35 190.34q-5.13 16.96-19.24 27.5-14.11 10.55-32.06 9.55-18.52-1-32.48-12.05-13.96-11.04-18.09-28.56l-68-294.3-109.69 498.82q-4.13 17.39-17.18 28.5-13.04 11.11-30.43 12.11Z'
-            fill={color}
-            />
-        </svg>
-    );
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M356.48-60.78q-17.39 0-30.44-10.33Q313-81.43 307.87-97.83L207.56-427h-93.78q-22.08 0-37.54-15.46Q60.78-457.91 60.78-480t15.46-37.54Q91.7-533 113.78-533h132.83q17.52 0 31.41 10.33 13.89 10.32 19.02 27.28l50.18 164.13 116.26-526.35q4.13-17.96 17.95-29.78 13.83-11.83 31.79-11.83 17.95 0 31.78 11.33 13.83 11.32 17.96 29.28l77.95 338.69 46.39-138.3q5.7-16.39 19.03-26.43 13.32-10.05 30.28-10.05t30.06 9.26q13.11 9.27 19.81 24.66L835.35-533h11.43q22.09 0 37.55 15.46 15.45 15.45 15.45 37.54t-15.45 37.54Q868.87-427 846.78-427h-42.26q-16.95 0-30.35-9.26-13.39-9.26-19.52-25.22L743-492.69l-59.35 190.34q-5.13 16.96-19.24 27.5-14.11 10.55-32.06 9.55-18.52-1-32.48-12.05-13.96-11.04-18.09-28.56l-68-294.3-109.69 498.82q-4.13 17.39-17.18 28.5-13.04 11.11-30.43 12.11Z"
+        fill={color}
+      />
+    </svg>
+  );
 }
 
 export function IconPhysicsOutlinedRounded({
-    size = 24,
-    color = 'black',
-    onClick,
-    className
+  size = 24,
+  color = "black",
+  onClick,
+  className,
 }: IFluentProps) {
-    return (
-        <svg
-            width={size+`px`}
-            height={size+`px`}
-            viewBox={`0 -960 960 960`}
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            onClick={onClick}
-            className={className}
-        >
-            <path
-            d='M347.33-118.89v-54.74Q242.04-213.5 175.88-307.08q-66.16-93.57-66.16-212.29 0-77.09 29.21-144.41 29.22-67.33 79.16-117.38 49.93-50.06 117.34-79.27 67.41-29.22 143.57-29.22 76.15 0 143.95 29.22 67.79 29.21 118.22 79.27 50.44 50.05 79.78 117.38 29.33 67.32 29.33 144.41 0 118.72-66.54 211.53-66.54 92.82-171.07 133.45v55.5q0 19.15-13.17 32.32-13.17 13.18-32.33 13.18-19.15 0-32.32-13.18-13.18-13.17-13.18-32.32v-32.44q-10.47 2-20.95 2.12-10.48.12-21.72.12-10.49 0-20.46-.5t-20.21-1.74v32.44q0 19.15-13.18 32.32-13.17 13.18-32.32 13.18-19.16 0-32.33-13.18-13.17-13.17-13.17-32.32Zm132.71-119.2q115.72 0 197.48-81.8 81.76-81.8 81.76-197.52 0-115.72-81.8-197.48-81.8-81.76-197.52-81.76-115.72 0-197.48 81.8-81.76 81.8-81.76 197.52 0 115.72 81.8 197.48 81.8 81.76 197.52 81.76ZM369.57-595.7h220.86q19.04 0 31.91-12.87 12.88-12.88 12.88-31.91t-12.88-31.91q-12.87-12.87-31.91-12.87H369.57q-19.04 0-31.91 12.87-12.88 12.88-12.88 31.91t12.88 31.91q12.87 12.87 31.91 12.87Zm64.45 208.81-15.22 15.22q-13.95 13.95-13.95 32.51 0 18.55 14.43 32.99 13.96 13.95 32.99 13.95t32.99-13.95l58.65-58.66q13.68-13.76 13.68-32.1 0-18.35-13.68-32.03l-17.93-17.93 15.22-15.22q13.95-13.96 13.95-32.51 0-18.55-14.43-32.99-13.96-13.96-32.99-13.96t-32.99 13.96l-58.65 58.65q-13.68 13.76-13.68 32.11t13.68 32.02l17.93 17.94ZM480-517.37Z'
-            fill={color}
-            />
-        </svg>
-    );
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M347.33-118.89v-54.74Q242.04-213.5 175.88-307.08q-66.16-93.57-66.16-212.29 0-77.09 29.21-144.41 29.22-67.33 79.16-117.38 49.93-50.06 117.34-79.27 67.41-29.22 143.57-29.22 76.15 0 143.95 29.22 67.79 29.21 118.22 79.27 50.44 50.05 79.78 117.38 29.33 67.32 29.33 144.41 0 118.72-66.54 211.53-66.54 92.82-171.07 133.45v55.5q0 19.15-13.17 32.32-13.17 13.18-32.33 13.18-19.15 0-32.32-13.18-13.18-13.17-13.18-32.32v-32.44q-10.47 2-20.95 2.12-10.48.12-21.72.12-10.49 0-20.46-.5t-20.21-1.74v32.44q0 19.15-13.18 32.32-13.17 13.18-32.32 13.18-19.16 0-32.33-13.18-13.17-13.17-13.17-32.32Zm132.71-119.2q115.72 0 197.48-81.8 81.76-81.8 81.76-197.52 0-115.72-81.8-197.48-81.8-81.76-197.52-81.76-115.72 0-197.48 81.8-81.76 81.8-81.76 197.52 0 115.72 81.8 197.48 81.8 81.76 197.52 81.76ZM369.57-595.7h220.86q19.04 0 31.91-12.87 12.88-12.88 12.88-31.91t-12.88-31.91q-12.87-12.87-31.91-12.87H369.57q-19.04 0-31.91 12.87-12.88 12.88-12.88 31.91t12.88 31.91q12.87 12.87 31.91 12.87Zm64.45 208.81-15.22 15.22q-13.95 13.95-13.95 32.51 0 18.55 14.43 32.99 13.96 13.95 32.99 13.95t32.99-13.95l58.65-58.66q13.68-13.76 13.68-32.1 0-18.35-13.68-32.03l-17.93-17.93 15.22-15.22q13.95-13.96 13.95-32.51 0-18.55-14.43-32.99-13.96-13.96-32.99-13.96t-32.99 13.96l-58.65 58.65q-13.68 13.76-13.68 32.11t13.68 32.02l17.93 17.94ZM480-517.37Z"
+        fill={color}
+      />
+    </svg>
+  );
 }
 
 export function IconMathOutlinedRounded({
-    size = 24,
-    color = 'black',
-    onClick,
-    className
+  size = 24,
+  color = "black",
+  onClick,
+  className,
 }: IFluentProps) {
-    return (
-        <svg
-            width={size+`px`}
-            height={size+`px`}
-            viewBox={`0 -960 960 960`}
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            onClick={onClick}
-            className={className}
-        >
-            <path
-            d='M193.87-101.91q-50.09 0-82.05-27.39-31.95-27.4-31.95-71.35 0-34.83 19.54-56.59Q118.95-279 148.91-279q28.96 0 48.72 19.83 19.76 19.82 19.76 48.34 0 3.87-.22 7.03-.21 3.15-.65 7.02 5-.44 8.22-4.37 3.22-3.94 4.65-10.24l63.7-345.22h-76.27q-19.82 0-33.58-13.76-13.76-13.76-13.76-33.59 0-19.82 13.76-33.58Q197-651.3 216.82-651.3h94.09l19.31-97.05q10.39-50.43 46.26-80.65 35.87-30.22 86.35-30.22 49.65 0 81.61 28.26 31.95 28.26 31.95 71.79 0 33.95-19.54 55.71-19.55 21.76-49.5 21.76-28.96 0-48.72-19.82-19.76-19.83-19.76-48.78 0-3.87.22-7.03.21-3.15.65-7.02-5.44.87-8.72 4.59-3.28 3.72-4.72 10.02l-18.69 98.44h160.87q19.82 0 33.59 13.76 13.76 13.76 13.76 33.58 0 16.13-9.22 28.26-9.22 12.13-23.22 16.4l50.74 54.34 51.31-54.34q-14-4.27-23.5-16.4-9.5-12.13-9.5-28.26 0-19.82 13.76-33.58 13.76-13.76 33.58-13.76h130.74q19.83 0 33.59 13.76 13.76 13.76 13.76 33.58 0 19.83-13.76 33.59-13.76 13.76-33.59 13.76h-22.56L696.74-438.87l111.78 118.3h22q19.83 0 33.59 13.77 13.76 13.76 13.76 33.58 0 19.83-13.76 33.59-13.76 13.76-33.59 13.76H699.78q-19.82 0-33.58-13.76-13.76-13.76-13.76-33.59 0-16.13 9.5-28.26 9.5-12.13 23.5-16.39l-51.31-54.78-51.3 54.78q14 4.26 23.5 16.39t9.5 28.26q0 19.83-13.76 33.59-13.77 13.76-33.59 13.76H437.74q-19.83 0-33.59-13.76-13.76-13.76-13.76-33.59 0-19.82 13.76-33.58 13.76-13.77 33.59-13.77h22.56l110.66-118.3L460.3-556.61h-70.52l-62.87 339.48q-10.82 53.48-46.04 84.35-35.22 30.87-87 30.87Z'
-            fill={color}
-            />
-        </svg>
-    );
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M193.87-101.91q-50.09 0-82.05-27.39-31.95-27.4-31.95-71.35 0-34.83 19.54-56.59Q118.95-279 148.91-279q28.96 0 48.72 19.83 19.76 19.82 19.76 48.34 0 3.87-.22 7.03-.21 3.15-.65 7.02 5-.44 8.22-4.37 3.22-3.94 4.65-10.24l63.7-345.22h-76.27q-19.82 0-33.58-13.76-13.76-13.76-13.76-33.59 0-19.82 13.76-33.58Q197-651.3 216.82-651.3h94.09l19.31-97.05q10.39-50.43 46.26-80.65 35.87-30.22 86.35-30.22 49.65 0 81.61 28.26 31.95 28.26 31.95 71.79 0 33.95-19.54 55.71-19.55 21.76-49.5 21.76-28.96 0-48.72-19.82-19.76-19.83-19.76-48.78 0-3.87.22-7.03.21-3.15.65-7.02-5.44.87-8.72 4.59-3.28 3.72-4.72 10.02l-18.69 98.44h160.87q19.82 0 33.59 13.76 13.76 13.76 13.76 33.58 0 16.13-9.22 28.26-9.22 12.13-23.22 16.4l50.74 54.34 51.31-54.34q-14-4.27-23.5-16.4-9.5-12.13-9.5-28.26 0-19.82 13.76-33.58 13.76-13.76 33.58-13.76h130.74q19.83 0 33.59 13.76 13.76 13.76 13.76 33.58 0 19.83-13.76 33.59-13.76 13.76-33.59 13.76h-22.56L696.74-438.87l111.78 118.3h22q19.83 0 33.59 13.77 13.76 13.76 13.76 33.58 0 19.83-13.76 33.59-13.76 13.76-33.59 13.76H699.78q-19.82 0-33.58-13.76-13.76-13.76-13.76-33.59 0-16.13 9.5-28.26 9.5-12.13 23.5-16.39l-51.31-54.78-51.3 54.78q14 4.26 23.5 16.39t9.5 28.26q0 19.83-13.76 33.59-13.77 13.76-33.59 13.76H437.74q-19.83 0-33.59-13.76-13.76-13.76-13.76-33.59 0-19.82 13.76-33.58 13.76-13.77 33.59-13.77h22.56l110.66-118.3L460.3-556.61h-70.52l-62.87 339.48q-10.82 53.48-46.04 84.35-35.22 30.87-87 30.87Z"
+        fill={color}
+      />
+    </svg>
+  );
 }
 
 export function IconEconomyOutlinedRounded({
-    size = 24,
-    color = 'black',
-    onClick,
-    className
+  size = 24,
+  color = "black",
+  onClick,
+  className,
 }: IFluentProps) {
-    return (
-        <svg
-            width={size+`px`}
-            height={size+`px`}
-            viewBox={`0 -960 960 960`}
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            onClick={onClick}
-            className={className}
-        >
-            <path
-            d='M113.78-100.78q-22.08 0-37.54-15.46t-15.46-37.54q0-22.09 15.46-37.55 15.46-15.45 37.54-15.45h732.44q22.08 0 37.54 15.45 15.46 15.46 15.46 37.55 0 22.08-15.46 37.54t-37.54 15.46H113.78Zm60-157.31q-30.41 0-51.71-21.29-21.29-21.29-21.29-51.71v-135.13q0-30.41 21.29-51.71 21.3-21.29 51.71-21.29 30.42 0 51.71 21.29 21.29 21.3 21.29 51.71v135.13q0 30.42-21.29 51.71t-51.71 21.29Zm203.96 0q-30.42 0-51.71-21.29t-21.29-51.71v-335.13q0-30.41 21.29-51.71 21.29-21.29 51.71-21.29t51.71 21.29q21.29 21.3 21.29 51.71v335.13q0 30.42-21.29 51.71t-51.71 21.29Zm203.96 0q-30.42 0-51.71-21.29t-21.29-51.71v-215.13q0-30.41 21.29-51.71 21.29-21.29 51.71-21.29 30.41 0 51.7 21.29 21.3 21.3 21.3 51.71v215.13q0 30.42-21.3 51.71-21.29 21.29-51.7 21.29Zm204.52 0q-30.42 0-51.71-21.29t-21.29-51.71v-455.13q0-30.41 21.29-51.71 21.29-21.29 51.71-21.29 30.41 0 51.71 21.29 21.29 21.3 21.29 51.71v455.13q0 30.42-21.29 51.71-21.3 21.29-51.71 21.29Z'
-            fill={color}
-            />
-        </svg>
-    );
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M113.78-100.78q-22.08 0-37.54-15.46t-15.46-37.54q0-22.09 15.46-37.55 15.46-15.45 37.54-15.45h732.44q22.08 0 37.54 15.45 15.46 15.46 15.46 37.55 0 22.08-15.46 37.54t-37.54 15.46H113.78Zm60-157.31q-30.41 0-51.71-21.29-21.29-21.29-21.29-51.71v-135.13q0-30.41 21.29-51.71 21.3-21.29 51.71-21.29 30.42 0 51.71 21.29 21.29 21.3 21.29 51.71v135.13q0 30.42-21.29 51.71t-51.71 21.29Zm203.96 0q-30.42 0-51.71-21.29t-21.29-51.71v-335.13q0-30.41 21.29-51.71 21.29-21.29 51.71-21.29t51.71 21.29q21.29 21.3 21.29 51.71v335.13q0 30.42-21.29 51.71t-51.71 21.29Zm203.96 0q-30.42 0-51.71-21.29t-21.29-51.71v-215.13q0-30.41 21.29-51.71 21.29-21.29 51.71-21.29 30.41 0 51.7 21.29 21.3 21.3 21.3 51.71v215.13q0 30.42-21.3 51.71-21.29 21.29-51.7 21.29Zm204.52 0q-30.42 0-51.71-21.29t-21.29-51.71v-455.13q0-30.41 21.29-51.71 21.29-21.29 51.71-21.29 30.41 0 51.71 21.29 21.29 21.3 21.29 51.71v455.13q0 30.42-21.29 51.71-21.3 21.29-51.71 21.29Z"
+        fill={color}
+      />
+    </svg>
+  );
 }
 
 export function IconAstronomyOutlinedRounded({
-    size = 24,
-    color = 'black',
-    onClick,
-    className
+  size = 24,
+  color = "black",
+  onClick,
+  className,
 }: IFluentProps) {
-    return (
-        <svg
-            width={size+`px`}
-            height={size+`px`}
-            viewBox={`0 -960 960 960`}
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            onClick={onClick}
-            className={className}
-        >
-            <path
-            d='M224.17-69.48q-64.09 0-109.39-45.33t-45.3-109.45q0-64.13 45.33-109.37 45.33-45.24 109.45-45.24 64.13 0 109.37 45.3 45.24 45.31 45.24 109.4 0 19.74-4.8 38.54-4.81 18.8-14.98 36.24l-.57-41.7q28.87 11.87 59.74 18.09 30.87 6.22 61.74 6.22 116.78 0 202.89-73.79Q769-314.35 787.96-426q3.69-22.09 19.93-38.04Q824.13-480 846.36-480q22.22 0 37.26 15.96 15.03 15.95 11.9 38.04-19.95 155.39-137.19 260.31Q641.09-60.78 480-60.78q-44.42 0-86.86-8.94-42.44-8.93-82.44-26.8Q291.3-83 269.28-76.24q-22.02 6.76-45.11 6.76Zm-.03-105.43q20.51 0 34.9-14.36 14.39-14.36 14.39-34.87 0-20.51-14.35-34.9-14.36-14.39-34.87-14.39-20.51 0-34.91 14.35-14.39 14.36-14.39 34.87 0 20.51 14.36 34.91 14.36 14.39 34.87 14.39ZM479.91-325.3q-64.13 0-109.37-45.33-45.24-45.33-45.24-109.46t45.33-109.37q45.33-45.24 109.46-45.24t109.37 45.33q45.24 45.33 45.24 109.46t-45.33 109.37q-45.33 45.24-109.46 45.24Zm.09-467.92q-116.78 0-202.89 73.79Q191-645.65 172.04-534q-3.69 22.09-19.93 38.04Q135.87-480 113.64-480q-22.22 0-37.26-15.96-15.03-15.95-11.9-38.04 19.95-155.39 137.19-260.31Q318.91-899.22 480-899.22q44.42 0 86.86 8.94 42.44 8.93 82.44 26.8 19.4-13.52 41.75-20.28 22.35-6.76 45.34-6.76 64.22 0 109.18 44.95 44.95 44.96 44.95 109.09 0 64.12-44.95 109.45-44.96 45.33-109.09 45.33-64.12 0-109.45-45.3T581.7-736.39q0-19.74 4.8-38.55 4.8-18.8 14.98-36.23v42.26q-28.87-11.87-59.74-18.09-30.87-6.22-61.74-6.22Zm256.36 106.09q20.51 0 34.62-14.36 14.11-14.36 14.11-34.87 0-20.51-14.24-34.62-14.25-14.11-34.59-14.11-20.35 0-34.74 14.24-14.39 14.25-14.39 34.59 0 20.35 14.36 34.74t34.87 14.39ZM224.17-224.17Zm512.22-512.22Z'
-            fill={color}
-            />
-        </svg>
-    );
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M224.17-69.48q-64.09 0-109.39-45.33t-45.3-109.45q0-64.13 45.33-109.37 45.33-45.24 109.45-45.24 64.13 0 109.37 45.3 45.24 45.31 45.24 109.4 0 19.74-4.8 38.54-4.81 18.8-14.98 36.24l-.57-41.7q28.87 11.87 59.74 18.09 30.87 6.22 61.74 6.22 116.78 0 202.89-73.79Q769-314.35 787.96-426q3.69-22.09 19.93-38.04Q824.13-480 846.36-480q22.22 0 37.26 15.96 15.03 15.95 11.9 38.04-19.95 155.39-137.19 260.31Q641.09-60.78 480-60.78q-44.42 0-86.86-8.94-42.44-8.93-82.44-26.8Q291.3-83 269.28-76.24q-22.02 6.76-45.11 6.76Zm-.03-105.43q20.51 0 34.9-14.36 14.39-14.36 14.39-34.87 0-20.51-14.35-34.9-14.36-14.39-34.87-14.39-20.51 0-34.91 14.35-14.39 14.36-14.39 34.87 0 20.51 14.36 34.91 14.36 14.39 34.87 14.39ZM479.91-325.3q-64.13 0-109.37-45.33-45.24-45.33-45.24-109.46t45.33-109.37q45.33-45.24 109.46-45.24t109.37 45.33q45.24 45.33 45.24 109.46t-45.33 109.37q-45.33 45.24-109.46 45.24Zm.09-467.92q-116.78 0-202.89 73.79Q191-645.65 172.04-534q-3.69 22.09-19.93 38.04Q135.87-480 113.64-480q-22.22 0-37.26-15.96-15.03-15.95-11.9-38.04 19.95-155.39 137.19-260.31Q318.91-899.22 480-899.22q44.42 0 86.86 8.94 42.44 8.93 82.44 26.8 19.4-13.52 41.75-20.28 22.35-6.76 45.34-6.76 64.22 0 109.18 44.95 44.95 44.96 44.95 109.09 0 64.12-44.95 109.45-44.96 45.33-109.09 45.33-64.12 0-109.45-45.3T581.7-736.39q0-19.74 4.8-38.55 4.8-18.8 14.98-36.23v42.26q-28.87-11.87-59.74-18.09-30.87-6.22-61.74-6.22Zm256.36 106.09q20.51 0 34.62-14.36 14.11-14.36 14.11-34.87 0-20.51-14.24-34.62-14.25-14.11-34.59-14.11-20.35 0-34.74 14.24-14.39 14.25-14.39 34.59 0 20.35 14.36 34.74t34.87 14.39ZM224.17-224.17Zm512.22-512.22Z"
+        fill={color}
+      />
+    </svg>
+  );
 }
 
 export function IconEarthOutlinedRounded({
-    size = 24,
-    color = 'black',
-    onClick,
-    className
+  size = 24,
+  color = "black",
+  onClick,
+  className,
 }: IFluentProps) {
-    return (
-        <svg
-            width={size+`px`}
-            height={size+`px`}
-            viewBox={`0 -960 960 960`}
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            onClick={onClick}
-            className={className}
-        >
-            <path
-            d='M480-60.78q-87.52 0-163.91-32.96-76.38-32.96-132.88-89.47-56.51-56.5-89.47-132.88Q60.78-392.48 60.78-480t32.96-163.91q32.96-76.38 89.47-132.88 56.5-56.51 132.88-89.47 76.39-32.96 163.91-32.96t163.91 32.96q76.38 32.96 132.88 89.47 56.51 56.5 89.47 132.88 32.96 76.39 32.96 163.91t-32.96 163.91q-32.96 76.38-89.47 132.88-56.5 56.51-132.88 89.47Q567.52-60.78 480-60.78Zm0-106q121.56 0 208.63-78.31 87.06-78.3 100.07-194.78 0-3.04-.22-6.3t-.22-5.44q-8.96 19.39-27.56 31.33-18.61 11.93-42.4 11.93h-76.04q-35.8 0-61.29-25.49-25.49-25.49-25.49-61.29v-43.39H381.91v-82.26q0-36.03 25.49-61.69 25.5-25.66 61.3-25.66h43.39q0-26.59 13.91-46.81 13.91-20.23 34.17-27.84-19.44-4.75-39.37-7.59-19.93-2.85-40.8-2.85-131.74 0-222.48 90.74-90.74 90.74-90.74 222.48 0 2.83.29 5.65.28 2.83.28 5.65h165.52q72.22 0 122.89 50.68 50.67 50.67 50.67 122.66v43.62H376.26v66.48q24.52 8.96 50.27 13.72 25.74 4.76 53.47 4.76Z'
-            fill={color}
-            />
-        </svg>
-    );
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M480-60.78q-87.52 0-163.91-32.96-76.38-32.96-132.88-89.47-56.51-56.5-89.47-132.88Q60.78-392.48 60.78-480t32.96-163.91q32.96-76.38 89.47-132.88 56.5-56.51 132.88-89.47 76.39-32.96 163.91-32.96t163.91 32.96q76.38 32.96 132.88 89.47 56.51 56.5 89.47 132.88 32.96 76.39 32.96 163.91t-32.96 163.91q-32.96 76.38-89.47 132.88-56.5 56.51-132.88 89.47Q567.52-60.78 480-60.78Zm0-106q121.56 0 208.63-78.31 87.06-78.3 100.07-194.78 0-3.04-.22-6.3t-.22-5.44q-8.96 19.39-27.56 31.33-18.61 11.93-42.4 11.93h-76.04q-35.8 0-61.29-25.49-25.49-25.49-25.49-61.29v-43.39H381.91v-82.26q0-36.03 25.49-61.69 25.5-25.66 61.3-25.66h43.39q0-26.59 13.91-46.81 13.91-20.23 34.17-27.84-19.44-4.75-39.37-7.59-19.93-2.85-40.8-2.85-131.74 0-222.48 90.74-90.74 90.74-90.74 222.48 0 2.83.29 5.65.28 2.83.28 5.65h165.52q72.22 0 122.89 50.68 50.67 50.67 50.67 122.66v43.62H376.26v66.48q24.52 8.96 50.27 13.72 25.74 4.76 53.47 4.76Z"
+        fill={color}
+      />
+    </svg>
+  );
 }
 
-
 export function IconBiologyOutlinedRounded({
-    size = 24,
-    color = 'black',
-    onClick,
-    className
+  size = 24,
+  color = "black",
+  onClick,
+  className,
 }: IFluentProps) {
-    return (
-        <svg
-            width={size+`px`}
-            height={size+`px`}
-            viewBox={`0 -960 960 960`}
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            onClick={onClick}
-            className={className}
-        >
-            <path
-            d='M187-80q0-138.43 56.02-225.78T398.22-480q-99.18-86.87-155.2-174.22Q187-741.57 187-880v-10q0-22.09 15.46-37.54Q217.91-943 240-943t37.54 15.46Q293-912.09 293-890v10q0 4.78.22 8.91t.65 8.48h372.26q.43-4.35.65-8.48.22-4.13.22-8.91v-10q0-22.09 15.46-37.54Q697.91-943 720-943t37.54 15.46Q773-912.09 773-890v10q0 138.43-56.02 225.78T561.78-480q99.18 86.87 155.2 174.22Q773-218.43 773-80v10q0 22.09-15.46 37.54Q742.09-17 720-17t-37.54-15.46Q667-47.91 667-70v-10q0-4.78-.22-8.91t-.65-8.48H293.87q-.43 4.35-.65 8.48Q293-84.78 293-80v10q0 22.09-15.46 37.54Q262.09-17 240-17t-37.54-15.46Q187-47.91 187-70v-10Zm147.61-630.52h290.78q8.48-13.92 14.59-27.55 6.11-13.63 11.28-29.84H308.74q5.17 15.78 11.28 29.63 6.11 13.84 14.59 27.76ZM480-548.96q20-17 38.43-33.43 18.44-16.44 34.87-33.44H406.7q16.43 17 34.87 33.44Q460-565.96 480-548.96Zm-73.3 204.79h146.6q-16.43-17-34.87-33.44Q500-394.04 480-411.04q-20 17-38.43 33.43-18.44 16.44-34.87 33.44Zm-97.96 152.08h342.52q-5.17-15.78-11.28-29.63-6.11-13.84-14.59-27.76H334.61q-8.48 13.92-14.59 27.55-6.11 13.63-11.28 29.84Z'
-            fill={color}
-            />
-        </svg>
-    );
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M187-80q0-138.43 56.02-225.78T398.22-480q-99.18-86.87-155.2-174.22Q187-741.57 187-880v-10q0-22.09 15.46-37.54Q217.91-943 240-943t37.54 15.46Q293-912.09 293-890v10q0 4.78.22 8.91t.65 8.48h372.26q.43-4.35.65-8.48.22-4.13.22-8.91v-10q0-22.09 15.46-37.54Q697.91-943 720-943t37.54 15.46Q773-912.09 773-890v10q0 138.43-56.02 225.78T561.78-480q99.18 86.87 155.2 174.22Q773-218.43 773-80v10q0 22.09-15.46 37.54Q742.09-17 720-17t-37.54-15.46Q667-47.91 667-70v-10q0-4.78-.22-8.91t-.65-8.48H293.87q-.43 4.35-.65 8.48Q293-84.78 293-80v10q0 22.09-15.46 37.54Q262.09-17 240-17t-37.54-15.46Q187-47.91 187-70v-10Zm147.61-630.52h290.78q8.48-13.92 14.59-27.55 6.11-13.63 11.28-29.84H308.74q5.17 15.78 11.28 29.63 6.11 13.84 14.59 27.76ZM480-548.96q20-17 38.43-33.43 18.44-16.44 34.87-33.44H406.7q16.43 17 34.87 33.44Q460-565.96 480-548.96Zm-73.3 204.79h146.6q-16.43-17-34.87-33.44Q500-394.04 480-411.04q-20 17-38.43 33.43-18.44 16.44-34.87 33.44Zm-97.96 152.08h342.52q-5.17-15.78-11.28-29.63-6.11-13.84-14.59-27.76H334.61q-8.48 13.92-14.59 27.55-6.11 13.63-11.28 29.84Z"
+        fill={color}
+      />
+    </svg>
+  );
+}
+
+export function IconQuizOutlinedRounded({
+  size = 24,
+  color = "black",
+  onClick,
+  className,
+}: IFluentProps) {
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M206.78-100.78q-43.72 0-74.86-31.14t-31.14-74.86v-546.44q0-43.72 31.14-74.86t74.86-31.14h149.35q16.96-37.13 50.28-58.56 33.33-21.44 73.59-21.44 40.26 0 73.59 21.44 33.32 21.43 50.28 58.56h149.35q43.72 0 74.86 31.14t31.14 74.86v546.44q0 43.72-31.14 74.86t-74.86 31.14H206.78Zm0-106h546.44v-546.44H206.78v546.44Zm120-80H518.3q17 0 28.5-11.5t11.5-28.5q0-17-11.5-28.5t-28.5-11.5H326.78q-17 0-28.5 11.5t-11.5 28.5q0 17 11.5 28.5t28.5 11.5Zm0-153.22h306.44q17 0 28.5-11.5t11.5-28.5q0-17-11.5-28.5t-28.5-11.5H326.78q-17 0-28.5 11.5t-11.5 28.5q0 17 11.5 28.5t28.5 11.5Zm0-153.22h306.44q17 0 28.5-11.5t11.5-28.5q0-17-11.5-28.5t-28.5-11.5H326.78q-17 0-28.5 11.5t-11.5 28.5q0 17 11.5 28.5t28.5 11.5ZM480-785.48q14.96 0 24.74-9.78 9.78-9.78 9.78-24.74 0-14.96-9.78-24.74-9.78-9.78-24.74-9.78-14.96 0-24.74 9.78-9.78 9.78-9.78 24.74 0 14.96 9.78 24.74 9.78 9.78 24.74 9.78Zm-273.22 578.7v-546.44 546.44Z"
+        fill={color}
+      />
+    </svg>
+  );
+}
+
+export function IconLeaderboardOutlinedRounded({
+  size = 24,
+  color = "black",
+  onClick,
+  className,
+}: IFluentProps) {
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M166.78-206.78h137.96v-306.44H166.78v306.44Zm243.96 0h138.52v-546.44H410.74v546.44Zm244.52 0h137.96v-226.44H655.26v226.44Zm-594.48 0v-306.44q0-44.3 30.85-75.15 30.85-30.85 75.15-30.85h137.96v-134q0-44.3 30.85-75.15 30.84-30.85 75.15-30.85h138.52q44.31 0 75.15 30.85 30.85 30.85 30.85 75.15v214h137.96q44.3 0 75.15 30.85 30.85 30.85 30.85 75.15v226.44q0 44.3-30.85 75.15-30.85 30.85-75.15 30.85H166.78q-44.3 0-75.15-30.85-30.85-30.85-30.85-75.15Z"
+        fill={color}
+      />
+    </svg>
+  );
+}
+
+export function IconHistory({
+  size = 24,
+  color = "black",
+  onClick,
+  className,
+}: IFluentProps) {
+  return (
+    <svg
+      width={size + `px`}
+      height={size + `px`}
+      viewBox={`0 -960 960 960`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={className}
+    >
+      <path
+        d="M478.87-100.78q-129.96 0-230.91-77.63Q147-256.04 114.04-377.3q-5.69-19.53 7.7-35.7t35.48-19.3q21.08-3.13 38.89 7.41 17.8 10.54 24.5 30.5 26.83 83.22 97.59 135.41 70.76 52.2 160.67 52.2 114.17 0 193.69-79.52 79.53-79.53 79.53-193.7 0-114.17-79.53-193.7-79.52-79.52-193.69-79.52-62.22 0-117.7 27.2-55.47 27.19-94.78 76.41h49.65q18.7 0 31.61 12.91 12.92 12.92 12.92 31.61 0 18.7-12.92 31.89-12.91 13.2-31.61 13.2H158.3q-22.08 0-37.54-15.46Q105.3-590.91 105.3-613v-157.17q0-18.7 12.92-31.33 12.91-12.63 31.61-12.63 18.69 0 31.32 12.63 12.63 12.63 12.63 31.33v41.56q53.83-62.87 127.89-96.74 74.07-33.87 157.2-33.87 78.39 0 147.57 29.91 69.17 29.92 120.5 81.24 51.32 51.33 81.23 120.5 29.92 69.18 29.92 147.57 0 78.39-29.92 147.57-29.91 69.17-81.23 120.5-51.33 51.32-120.5 81.24-69.18 29.91-147.57 29.91ZM524.52-496l94.91 94.35q12.7 12.69 12.7 31.39 0 18.69-12.7 31.39-12.69 12.7-31.39 12.7-18.69 0-31.39-12.7L451.43-444.09q-7.69-7.69-11.54-17.17-3.85-9.48-3.85-20.31v-154.47q0-18.7 12.92-31.33Q461.87-680 480.57-680q18.69 0 31.32 12.63 12.63 12.63 12.63 31.33V-496Z"
+        fill={color}
+      />
+    </svg>
+  );
 }

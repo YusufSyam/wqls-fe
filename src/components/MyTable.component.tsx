@@ -7,6 +7,7 @@ import {
 } from "@/utils/functions/date.function";
 import { Text } from "@mantine/core";
 import React from "react";
+import Loading from "./Loading.component";
 
 export interface IMyTableColumn {
   key: string;
@@ -17,9 +18,10 @@ export interface IMyTableColumn {
 export interface IMyTable {
   columns: IMyTableColumn[];
   data: Record<string, any>[];
+  isLoading?: boolean;
 }
 
-const MyTable: React.FC<IMyTable> = ({ columns, data }) => {
+const MyTable: React.FC<IMyTable> = ({ columns, data, isLoading = true }) => {
   const renderCell = (value: any, type: IMyTableColumn["type"]) => {
     if (type === "duration") {
       return getQuizDuration(value);
@@ -47,22 +49,34 @@ const MyTable: React.FC<IMyTable> = ({ columns, data }) => {
             ))}
           </tr>
         </thead>
-        <tbody>
-          {data.map((row, idx) => (
-            <tr key={idx} className={`border-b hover:bg-light-gray/30`}>
-              {columns.map((col: any) => (
-                <td key={col.key} className="px-6 py-2">
-                  {col.key == "index" ? (
-                    <Text className="text-primary-text text-md text-center bg-error">{idx + 1}</Text>
-                  ) : (
-                    <Text className="text-primary-text text-md">
-                      {renderCell(row[col.key], col.type)}
-                    </Text>
-                  )}
-                </td>
+        <tbody className="">
+          {isLoading ? (
+            <div className="relative h-56">
+              <div className="absolute w-full left-96 top-8">
+                <Loading />
+              </div>
+            </div>
+          ) : (
+            <>
+              {data.map((row, idx) => (
+                <tr key={idx} className={`border-b hover:bg-light-gray/30`}>
+                  {columns.map((col: any) => (
+                    <td key={col.key} className="px-6 py-2">
+                      {col.key == "index" ? (
+                        <Text className="text-primary-text text-md text-center bg-error">
+                          {idx + 1}
+                        </Text>
+                      ) : (
+                        <Text className="text-primary-text text-md">
+                          {renderCell(row[col.key], col.type)}
+                        </Text>
+                      )}
+                    </td>
+                  ))}
+                </tr>
               ))}
-            </tr>
-          ))}
+            </>
+          )}
         </tbody>
       </table>
     </div>

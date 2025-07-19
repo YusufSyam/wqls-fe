@@ -2,7 +2,7 @@ import {
   QuizSubjectMap,
   TQuizSubject,
 } from "@/utils/constants/quizSubject.const";
-import { IFluentProps } from "./icons.component";
+import { IFluentProps } from "./Icons.component";
 
 type Props = {
   iconName: TQuizSubject;
