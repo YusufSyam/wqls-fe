@@ -99,6 +99,7 @@ const RegisterPage: React.FC<IRegisterPage> = ({}) => {
   };
 
   return (
+    
     <Stack maw={400} mx="auto" mt={60}>
       <LoadingModal opened={isLoading} />
       <Text className="text-2xl font-bold mb-6 text-center">Register</Text>

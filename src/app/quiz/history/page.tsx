@@ -1,10 +1,19 @@
 "use client";
 
-import { ILeaderboardResponseItem, getLeaderboard } from "@/api/leaderboard.api";
-import { getQuizSubmissionHistory, IQuizSubmissionHistory } from "@/api/quiz.api";
+import {
+  ILeaderboardResponseItem,
+  getLeaderboard,
+} from "@/api/leaderboard.api";
+import {
+  getQuizSubmissionHistory,
+  IQuizSubmissionHistory,
+} from "@/api/quiz.api";
 import HeaderText1 from "@/components/HeaderText1.component";
 import MyTable, { IMyTableColumn } from "@/components/MyTable.component";
-import { dummyLeaderboard, dummySubmissions } from "@/utils/constants/dummies.const";
+import {
+  dummyLeaderboard,
+  dummySubmissions,
+} from "@/utils/constants/dummies.const";
 import { Stack } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 
@@ -28,16 +37,18 @@ const columns: IMyTableColumn[] = [
 ];
 
 const SubmissionPage: React.FC<ISubmissionPage> = ({}) => {
-  
   const [loading, setLoading] = useState(true);
-  const [quizSubmissionHistory, setQuizSubmissionHistory] = useState<IQuizSubmissionHistoryItem[]>([]);
-  
+  const [quizSubmissionHistory, setQuizSubmissionHistory] = useState<
+    IQuizSubmissionHistoryItem[]
+  >([]);
+
   useEffect(() => {
     const fetchQuizSubmissionHistory = async () => {
       try {
-        const data : IQuizSubmissionHistoryItem[] = await getQuizSubmissionHistory();
-        console.log('data quiz submission',data)
-        setQuizSubmissionHistory(data)
+        const data: IQuizSubmissionHistoryItem[] =
+          await getQuizSubmissionHistory();
+        console.log("data quiz submission", data);
+        setQuizSubmissionHistory(data);
       } catch (error) {
         console.error("Failed to fetch leaderboard:", error);
       } finally {
@@ -48,9 +59,9 @@ const SubmissionPage: React.FC<ISubmissionPage> = ({}) => {
     fetchQuizSubmissionHistory();
   }, []);
 
-  console.log('quizSubmissionHistory',quizSubmissionHistory)
+  console.log("quizSubmissionHistory", quizSubmissionHistory);
   return (
-    <Stack>
+    <Stack className="px-40 py-10">
       <HeaderText1 title="Submissions" />
       <MyTable columns={columns} data={quizSubmissionHistory} />
     </Stack>

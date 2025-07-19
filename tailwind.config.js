@@ -8,6 +8,7 @@ export default {
       black: "#000000",
       secondary: "#d4d3e7",
       "light-gray": "#f2f2f9",
+      "lightest-gray": "#EEEEEE",
       error: "#FF2C56",
       "primary-text": "#334155",
       "secondary-text": "#808fa4",

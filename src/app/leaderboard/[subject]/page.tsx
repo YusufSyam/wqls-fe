@@ -45,7 +45,7 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
   console.log("subject", subject);
 
   const fetchLeaderboard = async (offset: number) => {
-    setLoading(true)
+    setLoading(true);
     try {
       const data: ILeaderboardResponseItem = await getLeaderboard(
         ITEMS_PER_PAGE,
@@ -68,8 +68,11 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
 
   console.log("zzz", leaderboard);
   return (
-    <Stack className="gap-8">
-      <HeaderText1 title="Leaderboard" subTitle={`Daftar nilai quiz ${subject} siswa diurutkan berdasarkan nilai tertinggi dan durasi terpendek`} />
+    <Stack className="px-40 py-10 gap-8">
+      <HeaderText1
+        title="Leaderboard"
+        subTitle={`Daftar nilai quiz ${subject} siswa diurutkan berdasarkan nilai tertinggi dan durasi terpendek`}
+      />
       <MyTable columns={columns} data={leaderboard} isLoading={loading} />
       <div style={{ marginTop: "1rem" }}>
         {Array.from({ length: totalPages }, (_, i) => (

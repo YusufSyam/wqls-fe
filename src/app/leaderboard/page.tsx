@@ -83,7 +83,7 @@ const LeaderboardPage: React.FC<ILeaderboardPage> = ({}) => {
 
   console.log("quizzes", quizzes);
   return (
-    <Stack className="gap-8">
+    <Stack className="px-40 py-10 gap-8">
       <HeaderText1
         title="Daftar Subjek"
         subTitle="Pilih salah satu dari subjek di bawah untuk melihat leaderboard"

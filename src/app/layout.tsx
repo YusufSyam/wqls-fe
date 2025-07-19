@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
 import ClientLayout from "@/components/layout/ClientLayout.component";
 import HeaderLayout from "@/components/layout/HeaderLayout.component";
 import { AuthProvider } from "@/context/AuthContext.context";
+import ROUTES from "@/utils/constants/routes.const";
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "wqls",
@@ -18,9 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col">
         <AuthProvider>
-          <header className="py-4 px-40 bg-[#EEEEEE]">
-            <HeaderLayout />
-          </header>
+          <HeaderLayout />
 
           <main className="">
             <ClientLayout>{children}</ClientLayout>

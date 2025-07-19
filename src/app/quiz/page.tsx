@@ -2,14 +2,23 @@
 
 import { postQuiz } from "@/api/quiz.api";
 import HeaderText1 from "@/components/HeaderText1.component";
+import { IconHistory } from "@/components/icons/Icons.component";
 import NavbarMenu from "@/components/layout/NavbarMenu.component";
+import MainButton from "@/components/MainButton.component";
 import {
   QUIZ_SUBJECT,
   QUIZ_SUBJECT_SELECT_LIST,
   TQuizSubject,
 } from "@/utils/constants/quizSubject.const";
 import ROUTES from "@/utils/constants/routes.const";
-import { Button, NumberInput, Select, Stack, TextInput } from "@mantine/core";
+import {
+  Button,
+  Group,
+  NumberInput,
+  Select,
+  Stack,
+  TextInput,
+} from "@mantine/core";
 import { useForm, yupResolver } from "@mantine/form";
 import React, { useState } from "react";
 import * as yup from "yup";
@@ -68,13 +77,19 @@ const QuizPage: React.FC<IQuizPage> = ({}) => {
   };
 
   return (
-    <Stack>
-      <HeaderText1
-        title="Quiz"
-        subTitle="Submit hasil quiz anda dan dapatkan skor yang sesuai"
-      />
+    <Stack className="px-40 py-10">
+      <Group className="justify-between">
+        <HeaderText1
+          title="Quiz"
+          subTitle="Submit hasil quiz anda dan dapatkan skor yang sesuai"
+        />
 
-      <NavbarMenu label="Submissions" href={ROUTES.SUBMISSIONS} />
+        <MainButton
+          icon={<IconHistory size={20} color="white" />}
+          href={ROUTES.SUBMISSIONS}
+          label="Riwayat Quiz"
+        />
+      </Group>
       <form onSubmit={form.onSubmit(handleSubmit)} className="space-y-4">
         <Select
           label="Subject"
