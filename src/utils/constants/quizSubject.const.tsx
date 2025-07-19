@@ -1,3 +1,18 @@
+import {
+  IconAlchemyOutlinedRounded,
+  IconAstronomyOutlinedRounded,
+  IconBiologyOutlinedRounded,
+  IconComputerOutlinedRounded,
+  IconEarthOutlined,
+  IconEarthOutlinedRounded,
+  IconEconomyOutlinedRounded,
+  IconGeographyOutlinedRounded,
+  IconMathOutlinedRounded,
+  IconPhysicsOutlinedRounded,
+  IFluentProps,
+} from "@/components/icons/icons.component";
+import { JSX } from "react";
+
 export const QUIZ_SUBJECT: TQuizSubject[] = [
   "Astronomi",
   "Biologi",
@@ -10,7 +25,7 @@ export const QUIZ_SUBJECT: TQuizSubject[] = [
   "Matematika",
 ];
 
-export const QUIZ_SUBJECT_SELECT_LIST : any = [
+export const QUIZ_SUBJECT_SELECT_LIST: any = [
   { value: 1, label: "Astronomi" },
   { value: 2, label: "Biologi" },
   { value: 3, label: "Ekonomi" },
@@ -40,3 +55,18 @@ export type TQuizSubject =
   | "Kebumian"
   | "Kimia"
   | "Matematika";
+
+export const QuizSubjectMap: Record<
+  TQuizSubject,
+  (props: IFluentProps) => JSX.Element
+> = {
+  Astronomi: IconAstronomyOutlinedRounded,
+  Biologi: IconBiologyOutlinedRounded,
+  Ekonomi: IconEconomyOutlinedRounded,
+  Fisika: IconPhysicsOutlinedRounded,
+  Geografi: IconGeographyOutlinedRounded,
+  Informatika: IconComputerOutlinedRounded,
+  Kebumian: IconEarthOutlinedRounded,
+  Kimia: IconAlchemyOutlinedRounded,
+  Matematika: IconMathOutlinedRounded,
+};

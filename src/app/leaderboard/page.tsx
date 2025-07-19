@@ -84,7 +84,7 @@ const LeaderboardPage: React.FC<ILeaderboardPage> = ({}) => {
     <Stack>
       <HeaderText1 title="Leaderboard" />
       {/* <MyTable columns={columns} data={leaderboard} /> */}
-      <Grid>
+      <Grid gutter={"xl"}>
         {quizzes?.map((quiz: IQuizzesWithStats) => {
           return (
             <Grid.Col key={quiz?.id} span={4}>

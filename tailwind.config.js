@@ -10,6 +10,10 @@ export default {
       error: "#FF2C56",
       "primary-text": "#334155",
       "secondary-text": "#808fa4",
+      "dark-blue": "#113F67",
+      "blue": "#34699A",
+      "light-blue": "#58A0C8",
+      "cream": "#FDF5AA"
     },
     fontSize: {
       xs: 10,
