@@ -2,6 +2,7 @@ import HeaderText1 from "@/components/HeaderText1.component";
 import { IconQuizOutlinedRounded } from "@/components/icons/Icons.component";
 import { StickerQuiz } from "@/components/icons/Stickers.component";
 import MainButton from "@/components/MainButton.component";
+import { useAuth } from "@/context/AuthContext.context";
 import ROUTES from "@/utils/constants/routes.const";
 import { Grid, Group, Stack, Text, useMantineTheme } from "@mantine/core";
 import React from "react";

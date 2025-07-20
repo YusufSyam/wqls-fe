@@ -5,6 +5,7 @@ import HeaderText1 from "@/components/HeaderText1.component";
 import { IconHistory } from "@/components/icons/Icons.component";
 import NavbarMenu from "@/components/layout/NavbarMenu.component";
 import MainButton from "@/components/MainButton.component";
+import { useAuth } from "@/context/AuthContext.context";
 import {
   QUIZ_SUBJECT,
   QUIZ_SUBJECT_SELECT_LIST,
@@ -20,7 +21,9 @@ import {
   TextInput,
 } from "@mantine/core";
 import { useForm, yupResolver } from "@mantine/form";
-import React, { useState } from "react";
+import { notifications } from "@mantine/notifications";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import * as yup from "yup";
 
 export interface IQuizPage {}
@@ -47,6 +50,21 @@ const schema = yup.object().shape({
 });
 
 const QuizPage: React.FC<IQuizPage> = ({}) => {
+  const router = useRouter();
+
+  const { user, isLoggedIn } = useAuth();
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      router.push("/login");
+      notifications.show({
+        title: "Silahkan login terlebih dahulu",
+        message: "Hanya user yang telah login sebelumnya yang bisa mengerjakan quiz",
+        color: "red",
+      });
+    }
+  }, [isLoggedIn, router]);
+
   const form = useForm<ISubmitQuiz>({
     validate: yupResolver(schema),
     initialValues: {
@@ -77,7 +95,7 @@ const QuizPage: React.FC<IQuizPage> = ({}) => {
   };
 
   return (
-    <Stack className="px-40 py-10">
+    <Stack className="px-56 py-10 gap-12">
       <Group className="justify-between">
         <HeaderText1
           title="Quiz"
@@ -87,40 +105,48 @@ const QuizPage: React.FC<IQuizPage> = ({}) => {
         <MainButton
           icon={<IconHistory size={20} color="white" />}
           href={ROUTES.SUBMISSIONS}
-          label="Riwayat Quiz"
+          label="Lihat Riwayat Quiz"
         />
       </Group>
       <form onSubmit={form.onSubmit(handleSubmit)} className="space-y-4">
-        <Select
-          label="Subject"
-          placeholder="Pilih subject"
-          data={QUIZ_SUBJECT_SELECT_LIST}
-          {...form.getInputProps("quiz")}
-          clearable
-        />
+        <Group>
+          <Select
+            label="Subjek"
+            placeholder="Pilih subjek"
+            data={QUIZ_SUBJECT_SELECT_LIST}
+            {...form.getInputProps("quiz")}
+            clearable
+            className="flex-1"
+          />
 
-        <NumberInput
-          label="Score"
-          placeholder="Masukkan skor (0–100)"
-          type="number"
-          {...form.getInputProps("score")}
-          min={0}
-          max={100}
-        />
+          <NumberInput
+            label="Skor"
+            placeholder="Masukkan skor (0–100)"
+            type="number"
+            {...form.getInputProps("score")}
+            min={0}
+            max={100}
+            className="flex-1"
+          />
+        </Group>
 
         <TextInput
-          label="Start Time"
+          label="Waktu Mulai Pengerjaan"
           type="datetime-local"
           {...form.getInputProps("user_start")}
         />
 
         <TextInput
-          label="End Time"
+          label="Waktu Berakhir Pengerjaan"
           type="datetime-local"
           {...form.getInputProps("user_end")}
         />
 
-        <Button type="submit" fullWidth>
+        <Button
+          type="submit"
+          className="rounded-full bg-dark-blue hover:bg-blue duration-300 ease-in-out transition-all"
+          fullWidth
+        >
           Submit
         </Button>
       </form>

@@ -19,12 +19,12 @@ const MainButton: React.FC<IMainButton> = ({
 }) => {
   const myButton =
     buttonColor == "blue" ? (
-      <Group className=" rounded-xl bg-dark-blue tracking-4 py-2 px-4 gap-2 items-center hover:bg-blue duration-300 ease-in-out transition-all">
+      <Group className=" rounded-full bg-dark-blue tracking-4 py-2 px-4 gap-2 items-center hover:bg-blue duration-300 ease-in-out transition-all">
         {icon && icon}
         <Text className="text-white mb-[1px]">{label}</Text>
       </Group>
     ) : (
-      <Group className="rounded-xl bg-cream tracking-4 py-2 px-4 gap-2 items-center hover:bg-cream duration-300 ease-in-out transition-all">
+      <Group className="rounded-full bg-cream tracking-4 py-2 px-4 gap-2 items-center hover:bg-cream duration-300 ease-in-out transition-all">
         {icon && icon}
         <Text className="text-primary-text mb-[1px]">{label}</Text>
       </Group>
