@@ -4,6 +4,7 @@ import { postQuiz } from "@/api/quiz.api";
 import HeaderText1 from "@/components/HeaderText1.component";
 import { IconHistory } from "@/components/icons/Icons.component";
 import NavbarMenu from "@/components/layout/NavbarMenu.component";
+import LoadingModal from "@/components/LoadingModal.component";
 import MainButton from "@/components/MainButton.component";
 import { useAuth } from "@/context/AuthContext.context";
 import {
@@ -59,7 +60,8 @@ const QuizPage: React.FC<IQuizPage> = ({}) => {
       router.push("/login");
       notifications.show({
         title: "Silahkan login terlebih dahulu",
-        message: "Hanya user yang telah login sebelumnya yang bisa mengerjakan quiz",
+        message:
+          "Hanya user yang telah login sebelumnya yang bisa mengerjakan quiz",
         color: "red",
       });
     }
@@ -86,9 +88,21 @@ const QuizPage: React.FC<IQuizPage> = ({}) => {
         values?.user_end
       );
 
+      notifications.show({
+        title: "Berhasil Submit Quiz",
+        message: "Anda berhasil mengumpulkan quiz",
+        color: "green",
+      });
+
+      form.reset()
       console.log("response", response);
     } catch (error) {
       console.error("Failed to fetch leaderboard:", error);
+      notifications.show({
+        title: "Gagal Submit",
+        message: "Terjadi kesalahan",
+        color: "red",
+      });
     } finally {
       setLoading(false);
     }
@@ -96,6 +110,7 @@ const QuizPage: React.FC<IQuizPage> = ({}) => {
 
   return (
     <Stack className="px-56 py-10 gap-12">
+      <LoadingModal opened={loading} />
       <Group className="justify-between">
         <HeaderText1
           title="Quiz"
