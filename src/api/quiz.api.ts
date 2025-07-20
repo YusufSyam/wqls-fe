@@ -11,7 +11,7 @@ export const getQuizSubmissionHistory = async (): Promise<
 > => {
   const response = await axios.get(`/quiz/history/`);
 
-  return response.data;
+  return response?.data;
 };
 
 export const getQuizzesListWithStats = async (): Promise<
@@ -19,7 +19,7 @@ export const getQuizzesListWithStats = async (): Promise<
 > => {
   const response = await axios.get(`/quiz/quizzes-stats/`);
 
-  return response.data;
+  return response?.data;
 };
 
 export const postQuiz = async (
