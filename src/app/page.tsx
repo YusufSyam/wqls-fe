@@ -5,6 +5,7 @@ import { Stack, Text } from "@mantine/core";
 
 import React, { useEffect } from "react";
 import HeroSection from "./Hero.section";
+import HomeQuizSection from "./HomeQuiz.section";
 
 export interface IHomePage {}
 
@@ -17,8 +18,11 @@ const HomePage: React.FC<IHomePage> = ({}) => {
   console.log(isLoggedIn, "isLoggedIn");
   console.log(user, "user");
   return (
-    <Stack>
+    <Stack className="gap-32">
       <HeroSection />
+      <div className="mx-40">
+        <HomeQuizSection />
+      </div>
     </Stack>
   );
 };

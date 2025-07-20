@@ -29,8 +29,8 @@ const HeroSection: React.FC<IHeroSection> = ({}) => {
         </Stack>
         <Stack className="ml-1 gap-6">
           <BubbleChat
-            chat="Bergabunglah dalam tantangan kuis mingguan lintas bidang dan lihat
-                  sejauh mana kamu bisa melangkah di papan peringkat!"
+            chat="Bergabunglah dalam tantangan sparring mingguan dan lihat
+                  sejauh mana kamu bisa melaju di leaderboard!"
           />
           <BubbleChat chat="Belajar, berkompetisi, dan jadilah yang terbaik setiap minggu" />
           <Stack className="rounded-3xl  bg-white py-4 px-6 relative border border-blue">
