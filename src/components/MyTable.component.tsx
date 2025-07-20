@@ -25,7 +25,7 @@ export interface IMyTable {
 const MyTable: React.FC<IMyTable> = ({
   columns,
   data,
-  isLoading = true,
+  isLoading = false,
   tableSpotlightIndexList = [],
 }) => {
   const renderCell = (value: any, type: IMyTableColumn["type"]) => {

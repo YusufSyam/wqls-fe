@@ -8,7 +8,7 @@ import HeaderText1 from "@/components/HeaderText1.component";
 import MyTable, { IMyTableColumn } from "@/components/MyTable.component";
 import { dummyLeaderboard } from "@/utils/constants/dummies.const";
 import { TQuizSubject } from "@/utils/constants/quizSubject.const";
-import { Stack, Text } from "@mantine/core";
+import { Button, Group, Stack, Text } from "@mantine/core";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -41,6 +41,7 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
 
   const [totalCount, setTotalCount] = useState(0);
   const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
+  const [activePage, setActivePage] = useState(1);
   //   const currentPage = parseInt((page as string) || "1");
   //   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
@@ -76,36 +77,67 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
         title="Leaderboard"
         subTitle={`Daftar nilai quiz ${subject} siswa diurutkan berdasarkan nilai tertinggi dan durasi terpendek`}
       />
-      {userRankList?.length > 0 && 
-      <Stack className="gap-0">
-        <Text className="text-primary-text font-quicksand-semibold text-2xl">Ranking {Math.min(...userRankList)}</Text>
-        <Text className="text-secondary-text text-md -mt-1">Ranking tertinggi anda setelah melakukan quiz sebanyak {userRankList?.length}x</Text>
-       </Stack> 
-      
-      
-      }
+      {userRankList?.length > 0 && (
+        <Stack className="gap-0">
+          <Text className="text-primary-text font-quicksand-semibold text-2xl">
+            Ranking {Math.min(...userRankList)}
+          </Text>
+          <Text className="text-secondary-text text-md -mt-1">
+            Ranking tertinggi anda setelah melakukan quiz sebanyak{" "}
+            {userRankList?.length}x
+          </Text>
+        </Stack>
+      )}
       <MyTable
         columns={columns}
         data={leaderboard}
         isLoading={loading}
         tableSpotlightIndexList={userRankList}
       />
-      <div style={{ marginTop: "1rem" }}>
+      <Group className="gap-0 self-center">
+        <Button
+          onClick={() => {
+            fetchLeaderboard(0);
+          }}
+          style={{
+            fontWeight: "normal",
+            marginRight: "0.5rem",
+          }}
+          className="rounded-full bg-dark-blue text-white px-4 py-2 hover:bg-blue duration-300 ease-in-out"
+        >
+          {"<"}
+        </Button>
         {Array.from({ length: totalPages }, (_, i) => (
-          <button
+          <Button
             key={i}
             onClick={() => {
-              fetchLeaderboard(ITEMS_PER_PAGE);
+              if (activePage != i + 1) {
+                fetchLeaderboard(ITEMS_PER_PAGE * i);
+                setActivePage(i+1)
+              }
             }}
             style={{
               fontWeight: "normal",
               marginRight: "0.5rem",
             }}
+            className={`rounded-full text-white px-4 py-2 duration-300 ease-in-out ${activePage==i+1? "cursor-default bg-primary-text hover:bg-primary-text" : "bg-dark-blue cursor-pointer hover:bg-blue"}`}
           >
             {i + 1}
-          </button>
+          </Button>
         ))}
-      </div>
+        <Button
+          onClick={() => {
+            fetchLeaderboard(ITEMS_PER_PAGE * (totalPages - 1));
+          }}
+          style={{
+            fontWeight: "normal",
+            marginRight: "0.5rem",
+          }}
+          className="rounded-full bg-dark-blue text-white px-4 py-2 hover:bg-blue duration-300 ease-in-out"
+        >
+          {">"}
+        </Button>
+      </Group>
     </Stack>
   );
 };

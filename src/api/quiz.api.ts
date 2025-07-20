@@ -9,7 +9,7 @@ export interface IQuizSubmissionHistory {
 export const getQuizSubmissionHistory = async (): Promise<
   IQuizSubmissionHistoryItem[]
 > => {
-  const response = await axios.get(`/quiz/submissions/history/`);
+  const response = await axios.get(`/quiz/history/`);
 
   return response.data;
 };

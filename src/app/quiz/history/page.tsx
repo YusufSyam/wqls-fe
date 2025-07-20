@@ -44,6 +44,7 @@ const SubmissionPage: React.FC<ISubmissionPage> = ({}) => {
 
   useEffect(() => {
     const fetchQuizSubmissionHistory = async () => {
+      setLoading(true)
       try {
         const data: IQuizSubmissionHistoryItem[] =
           await getQuizSubmissionHistory();
@@ -62,8 +63,8 @@ const SubmissionPage: React.FC<ISubmissionPage> = ({}) => {
   console.log("quizSubmissionHistory", quizSubmissionHistory);
   return (
     <Stack className="px-40 py-10">
-      <HeaderText1 title="Submissions" />
-      <MyTable columns={columns} data={quizSubmissionHistory} />
+      <HeaderText1 title="Riwayat" subTitle="Riwayat pengerjaan quiz" />
+      <MyTable columns={columns} data={quizSubmissionHistory} isLoading={loading} />
     </Stack>
   );
 };
