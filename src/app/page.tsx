@@ -6,6 +6,7 @@ import { Stack, Text } from "@mantine/core";
 import React, { useEffect } from "react";
 import HeroSection from "./Hero.section";
 import HomeQuizSection from "./HomeQuiz.section";
+import HomeLeaderboardSection from "./HomeLeaderboard.section";
 
 export interface IHomePage {}
 
@@ -20,9 +21,10 @@ const HomePage: React.FC<IHomePage> = ({}) => {
   return (
     <Stack className="gap-32">
       <HeroSection />
-      <div className="mx-40">
+      <Stack className="mx-40 gap-28">
         <HomeQuizSection />
-      </div>
+        <HomeLeaderboardSection />
+      </Stack>
     </Stack>
   );
 };

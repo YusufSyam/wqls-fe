@@ -1,41 +1,14 @@
-"use client";
-
-import {
-  ILeaderboardResponseItem,
-  getLeaderboard,
-} from "@/api/leaderboard.api";
-import { getQuizzesListWithStats } from "@/api/quiz.api";
 import HeaderText1 from "@/components/HeaderText1.component";
 import Loading from "@/components/Loading.component";
-import MyTable, { IMyTableColumn } from "@/components/MyTable.component";
 import QuizCard from "@/components/QuizCard.component";
-import { dummyLeaderboard } from "@/utils/constants/dummies.const";
-import { TQuizSubject } from "@/utils/constants/quizSubject.const";
 import { Grid, Stack } from "@mantine/core";
 import React, { useEffect, useState } from "react";
+import { IQuizzesWithStats } from "./leaderboard/page";
+import { getQuizzesListWithStats } from "@/api/quiz.api";
 
-export interface ILeaderboardPage {}
+export interface IHomeLeaderboardSection {}
 
-export interface ILeaderboardItem {
-  rank: number;
-  username: string;
-  duration: number;
-  score: number;
-  subject: TQuizSubject;
-}
-
-export interface IQuizzesWithStats {
-  id: number;
-  title: string;
-  bidang: TQuizSubject;
-  start_date: string;
-  end_date: string;
-  total_submissions: number;
-  user_submissions: number;
-  user_best_rank?: number | null;
-}
-
-const LeaderboardPage: React.FC<ILeaderboardPage> = ({}) => {
+const HomeLeaderboardSection: React.FC<IHomeLeaderboardSection> = ({}) => {
   const [loading, setLoading] = useState(true);
   const [quizzes, setQuizzes] = useState<IQuizzesWithStats[]>([]);
 
@@ -58,7 +31,7 @@ const LeaderboardPage: React.FC<ILeaderboardPage> = ({}) => {
 
   console.log("quizzes", quizzes);
   return (
-    <Stack className="px-40 py-10 gap-8">
+    <Stack className="gap-8">
       <HeaderText1
         title="Daftar Subjek"
         subTitle="Pilih salah satu dari subjek di bawah untuk melihat leaderboard"
@@ -84,4 +57,4 @@ const LeaderboardPage: React.FC<ILeaderboardPage> = ({}) => {
     </Stack>
   );
 };
-export default LeaderboardPage;
+export default HomeLeaderboardSection;
