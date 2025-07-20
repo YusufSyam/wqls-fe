@@ -44,7 +44,7 @@ const LeaderboardPage: React.FC<ILeaderboardPage> = ({}) => {
       setLoading(true);
       try {
         const data: IQuizzesWithStats[] = await getQuizzesListWithStats();
-        console.log("data leaderboard", data);
+        // console.log("data leaderboard", data);
         setQuizzes(data);
       } catch (error) {
         console.error("Failed to fetch leaderboard:", error);
@@ -56,7 +56,7 @@ const LeaderboardPage: React.FC<ILeaderboardPage> = ({}) => {
     fetchQuizzes();
   }, []);
 
-  console.log("quizzes", quizzes);
+  // console.log("quizzes", quizzes);
   return (
     <Stack className="px-40 py-10 gap-8">
       <HeaderText1

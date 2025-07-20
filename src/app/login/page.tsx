@@ -44,7 +44,7 @@ const LoginPage: React.FC<ILoginPage> = ({}) => {
 
   const handleLogin = async (values: typeof form.values) => {
     setIsLoading(true);
-    console.log(values);
+    // console.log(values);
     try {
       await login(values.username, values.password);
       router.push("/");

@@ -17,7 +17,7 @@ const HomeLeaderboardSection: React.FC<IHomeLeaderboardSection> = ({}) => {
       setLoading(true);
       try {
         const data: IQuizzesWithStats[] = await getQuizzesListWithStats();
-        console.log("data leaderboard", data);
+        // console.log("data leaderboard", data);
         setQuizzes(data);
       } catch (error) {
         console.error("Failed to fetch leaderboard:", error);
@@ -29,7 +29,7 @@ const HomeLeaderboardSection: React.FC<IHomeLeaderboardSection> = ({}) => {
     fetchQuizzes();
   }, []);
 
-  console.log("quizzes", quizzes);
+  // console.log("quizzes", quizzes);
   return (
     <Stack className="gap-8">
       <HeaderText1

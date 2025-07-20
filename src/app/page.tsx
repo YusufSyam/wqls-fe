@@ -16,8 +16,8 @@ const HomePage: React.FC<IHomePage> = ({}) => {
   // useEffect(()=>{
 
   // }, [isLoggedIn])
-  console.log(isLoggedIn, "isLoggedIn");
-  console.log(user, "user");
+  // console.log(isLoggedIn, "isLoggedIn");
+  // console.log(user, "user");
   return (
     <Stack className="gap-32">
       <HeroSection />

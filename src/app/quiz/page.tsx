@@ -77,7 +77,7 @@ const QuizPage: React.FC<IQuizPage> = ({}) => {
     },
   });
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (values: typeof form.values) => {
     setLoading(true);
     try {
@@ -95,7 +95,7 @@ const QuizPage: React.FC<IQuizPage> = ({}) => {
       });
 
       form.reset()
-      console.log("response", response);
+      // console.log("response", response);
     } catch (error) {
       console.error("Failed to fetch leaderboard:", error);
       notifications.show({

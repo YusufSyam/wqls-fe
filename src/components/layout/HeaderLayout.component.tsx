@@ -18,7 +18,7 @@ const HeaderLayout: React.FC<IHeaderLayout> = ({}) => {
   const { logout, isLoggedIn } = useAuth();
 
   const router = useRouter();
-  console.log("pathname", pathname);
+  // console.log("pathname", pathname);
   return (
     <header
       className={`py-4 px-40 ${

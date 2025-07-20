@@ -45,7 +45,7 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
   //   const currentPage = parseInt((page as string) || "1");
   //   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
-  console.log("subject", subject);
+  // console.log("subject", subject);
 
   const fetchLeaderboard = async (offset: number) => {
     setLoading(true);
@@ -55,7 +55,7 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
         offset,
         subject
       );
-      console.log("data leaderboard", data);
+      // console.log("data leaderboard", data);
       setLeaderboard(data?.data);
       setTotalCount(data?.total);
       setUserRankList(data?.userRankList || []);
@@ -70,7 +70,7 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
     fetchLeaderboard(0);
   }, []);
 
-  console.log("zzz", leaderboard);
+  // console.log("zzz", leaderboard);
   return (
     <Stack className="px-40 py-10 gap-8">
       <HeaderText1

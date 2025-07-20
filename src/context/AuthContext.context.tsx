@@ -35,7 +35,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   async function fetchUserInformation() {
     const user = await getCurrentUser();
-    console.log("logged in user", user?.username);
+    // console.log("logged in user", user?.username);
     setUser(user);
     setIsLoggedIn(true);
   }
@@ -58,7 +58,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setIsLoggedIn(user != null);
-    console.log("user is changed, user=", user?.username);
+    // console.log("user is changed, user=", user?.username);
   }, [user]);
 
   return (

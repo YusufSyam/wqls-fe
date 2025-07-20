@@ -50,7 +50,7 @@ const Profile: React.FC<IProfile> = ({}) => {
     try {
       await updateUserProfile(values);
       refetchUserInformation()
-      console.log(values)
+      // console.log(values)
       notifications.show({
         title: "Berhasil Update Profil",
         message: "",
@@ -66,7 +66,7 @@ const Profile: React.FC<IProfile> = ({}) => {
     }
   };
 
-  console.log("user", user);
+  // console.log("user", user);
   return (
     <Stack maw={600} mx="auto" mt={60} className="gap-8">
       <form onSubmit={form.onSubmit(handleSubmit)} className="space-y-4">

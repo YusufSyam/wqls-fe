@@ -48,7 +48,7 @@ const SubmissionPage: React.FC<ISubmissionPage> = ({}) => {
       try {
         const data: IQuizSubmissionHistoryItem[] =
           await getQuizSubmissionHistory();
-        console.log("data quiz submission", data);
+        // console.log("data quiz submission", data);
         setQuizSubmissionHistory(data);
       } catch (error) {
         console.error("Failed to fetch leaderboard:", error);
@@ -60,7 +60,7 @@ const SubmissionPage: React.FC<ISubmissionPage> = ({}) => {
     fetchQuizSubmissionHistory();
   }, []);
 
-  console.log("quizSubmissionHistory", quizSubmissionHistory);
+  // console.log("quizSubmissionHistory", quizSubmissionHistory);
   return (
     <Stack className="px-40 py-10">
       <HeaderText1 title="Riwayat" subTitle="Riwayat pengerjaan quiz" />
