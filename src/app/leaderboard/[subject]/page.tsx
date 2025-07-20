@@ -8,7 +8,7 @@ import HeaderText1 from "@/components/HeaderText1.component";
 import MyTable, { IMyTableColumn } from "@/components/MyTable.component";
 import { dummyLeaderboard } from "@/utils/constants/dummies.const";
 import { TQuizSubject } from "@/utils/constants/quizSubject.const";
-import { Stack } from "@mantine/core";
+import { Stack, Text } from "@mantine/core";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -25,6 +25,7 @@ export interface ILeaderboardItem {
 const columns: IMyTableColumn[] = [
   { key: "rank", label: "Peringkat", type: "number" },
   { key: "name", label: "Nama", type: "text" },
+  { key: "username", label: "Username", type: "text" },
   { key: "duration", label: "Durasi Ujian", type: "duration" },
   { key: "score", label: "Skor", type: "number" },
 ];
@@ -36,6 +37,7 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
   const { subject } = params as { subject: string };
   const [loading, setLoading] = useState(true);
   const [leaderboard, setLeaderboard] = useState<ILeaderboardItem[]>([]);
+  const [userRankList, setUserRankList] = useState<number[]>([]);
 
   const [totalCount, setTotalCount] = useState(0);
   const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
@@ -55,6 +57,7 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
       console.log("data leaderboard", data);
       setLeaderboard(data?.data);
       setTotalCount(data?.total);
+      setUserRankList(data?.userRankList || []);
     } catch (error) {
       console.error("Failed to fetch leaderboard:", error);
     } finally {
@@ -73,7 +76,20 @@ const LeaderboardBySubjectPage: React.FC<ILeaderboardBySubjectPage> = ({}) => {
         title="Leaderboard"
         subTitle={`Daftar nilai quiz ${subject} siswa diurutkan berdasarkan nilai tertinggi dan durasi terpendek`}
       />
-      <MyTable columns={columns} data={leaderboard} isLoading={loading} />
+      {userRankList?.length > 0 && 
+      <Stack className="gap-0">
+        <Text className="text-primary-text font-quicksand-semibold text-2xl">Ranking {Math.min(...userRankList)}</Text>
+        <Text className="text-secondary-text text-md -mt-1">Ranking tertinggi anda setelah melakukan quiz sebanyak {userRankList?.length}x</Text>
+       </Stack> 
+      
+      
+      }
+      <MyTable
+        columns={columns}
+        data={leaderboard}
+        isLoading={loading}
+        tableSpotlightIndexList={userRankList}
+      />
       <div style={{ marginTop: "1rem" }}>
         {Array.from({ length: totalPages }, (_, i) => (
           <button

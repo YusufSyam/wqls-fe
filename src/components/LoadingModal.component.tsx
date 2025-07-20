@@ -1,7 +1,4 @@
-import {
-  Stack,
-  Text
-} from "@mantine/core";
+import { Stack, Text } from "@mantine/core";
 import React from "react";
 import MyModal from "./MyModal.component";
 import Loading from "./Loading.component";
@@ -20,7 +17,7 @@ interface ILoadingModalProps {
 const LoadingModal = ({
   opened,
   description = "Memproses permintaan, harap tunggu sebentar...",
-  setOpened=()=>{}
+  setOpened = () => {},
 }: ILoadingModalProps) => {
   return (
     <MyModal
@@ -29,10 +26,8 @@ const LoadingModal = ({
       title={"Dalam Proses"}
       onClose={() => {}}
     >
-      <Stack>
-        <div className={`py-10`}>
-          <Loading message="Memproses permintaan, harap tunggu sebentar..." />
-        </div>
+      <Stack className="py-4">
+        <Loading message="Memproses permintaan, harap tunggu sebentar..." />
       </Stack>
     </MyModal>
   );

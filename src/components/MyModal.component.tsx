@@ -56,7 +56,7 @@ const MyModal = ({
       styles={{
         content: {
           minWidth: `${minWidth}px`,
-          borderRadius: "2px",
+          borderRadius: "24px",
           paddingLeft: `${additionalPaddingLeft}px`,
           paddingRight: `${additionalPaddingRight}px`,
           // overflow: "hidden !important",

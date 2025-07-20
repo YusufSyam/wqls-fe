@@ -9,6 +9,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { WQLSIcon } from "../icons/Stickers.component";
 import Link from "next/link";
 import { IconLogoutOutline, IconPersonFilled } from "../icons/Icons.component";
+import { notifications } from "@mantine/notifications";
 
 export interface IHeaderLayout {}
 
@@ -74,6 +75,12 @@ const HeaderLayout: React.FC<IHeaderLayout> = ({}) => {
                     logout();
 
                     router.push(ROUTES.LOGIN);
+
+                    notifications.show({
+                      title: "Logout Berhasil",
+                      message: "Silahkan Log In kembali untuk mengerjakan quiz",
+                      color: "green",
+                    });
                   }}
                   className="cursor-pointer gap-2"
                 >

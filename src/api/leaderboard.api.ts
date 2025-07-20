@@ -4,6 +4,7 @@ import axios from "@/lib/axiosInstance";
 export interface ILeaderboardResponseItem {
   data: ILeaderboardItem[];
   total: number;
+  userRankList: number[]
 }
 
 export const getLeaderboard = async (

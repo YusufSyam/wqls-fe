@@ -19,9 +19,15 @@ export interface IMyTable {
   columns: IMyTableColumn[];
   data: Record<string, any>[];
   isLoading?: boolean;
+  tableSpotlightIndexList?: number[];
 }
 
-const MyTable: React.FC<IMyTable> = ({ columns, data, isLoading = true }) => {
+const MyTable: React.FC<IMyTable> = ({
+  columns,
+  data,
+  isLoading = true,
+  tableSpotlightIndexList = [],
+}) => {
   const renderCell = (value: any, type: IMyTableColumn["type"]) => {
     if (type === "duration") {
       return getQuizDuration(value);
@@ -58,12 +64,19 @@ const MyTable: React.FC<IMyTable> = ({ columns, data, isLoading = true }) => {
             </div>
           ) : (
             <>
-              {data.map((row, idx) => (
-                <tr key={idx} className={`border-b hover:bg-light-gray/30`}>
+              {data?.map((row, idx) => (
+                <tr
+                  key={idx}
+                  className={`border-b ${
+                    tableSpotlightIndexList.includes(idx+1)
+                      ? "bg-light-blue/50"
+                      : "hover:bg-light-gray/30"
+                  }`}
+                >
                   {columns.map((col: any) => (
                     <td key={col.key} className="px-6 py-2">
                       {col.key == "index" ? (
-                        <Text className="text-primary-text text-md text-center bg-error">
+                        <Text className="text-primary-text text-md text-center">
                           {idx + 1}
                         </Text>
                       ) : (
