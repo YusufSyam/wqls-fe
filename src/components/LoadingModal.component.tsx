@@ -31,9 +31,8 @@ const LoadingModal = ({
     >
       <Stack>
         <div className={`py-10`}>
-          <Loading />
+          <Loading message="Memproses permintaan, harap tunggu sebentar..." />
         </div>
-        <Text className="text-lg text-secondary-text">{description}</Text>
       </Stack>
     </MyModal>
   );

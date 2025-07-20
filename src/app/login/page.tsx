@@ -16,6 +16,7 @@ import ROUTES from "@/utils/constants/routes.const";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext.context";
 import LoadingModal from "@/components/LoadingModal.component";
+import HeaderText1 from "@/components/HeaderText1.component";
 
 export interface ILoginPage {}
 
@@ -56,13 +57,13 @@ const LoginPage: React.FC<ILoginPage> = ({}) => {
   };
 
   return (
-    <Stack maw={400} mx="auto" mt={60}>
+    <Stack maw={400} mx="auto" mt={60} className="gap-8">
       <LoadingModal opened={isLoading} />
-      <Text className="text-2xl font-bold mb-6 text-center">Login</Text>
+      <HeaderText1 title="Log In" textPosition="center" subTitle="Log in untuk mengerjakan quiz, dan melihat posisi anda pada leaderboard" />
 
       <form onSubmit={form.onSubmit(handleLogin)} className="space-y-4">
         <TextInput
-          label="username"
+          label="Username"
           placeholder="username"
           {...form.getInputProps("username")}
         />
@@ -73,13 +74,13 @@ const LoginPage: React.FC<ILoginPage> = ({}) => {
           {...form.getInputProps("password")}
         />
 
-        <Stack>
-          <Button type="submit" fullWidth>
+        <Stack className="mt-4">
+          <Button type="submit" fullWidth className="rounded-full bg-dark-blue hover:bg-blue duration-300 ease-in-out transition-all">
             Login
           </Button>
           <Text>
             Belum mempunyai akun?
-            <Link href={ROUTES.REGISTER}> Register </Link>
+            <Link href={ROUTES.REGISTER} className="text-blue"> register </Link>
             terlebih dahulu
           </Text>
         </Stack>

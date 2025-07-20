@@ -28,6 +28,9 @@ const HeroSection: React.FC<IHeroSection> = ({}) => {
           </Text>
         </Stack>
         <Stack className="ml-1 gap-6">
+          {isLoggedIn && (
+            <BubbleChat chat={`Selamat datang, ${user?.name || "siswa"}`} />
+          )}
           <BubbleChat
             chat="Bergabunglah dalam tantangan sparring mingguan dan lihat
                   sejauh mana kamu bisa melaju di leaderboard!"

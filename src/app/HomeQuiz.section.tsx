@@ -28,8 +28,7 @@ const HomeQuizSection: React.FC<IHomeQuizSection> = ({}) => {
           <Stack className="gap-4 px-4">
             <Text className="text-primary-text tracking-4 justify-center">
               Tantang dirimu setiap minggu dengan kumpulan soal pilihan ganda
-              dari berbagai bidang seperti Matematika, Sains, Teknologi, hingga
-              Pengetahuan Umum
+              dari berbagai bidang seperti Matematika, Informatika, Biologi, dan bidang-bidang lainnya
             </Text>
             <Text className="text-primary-text tracking-4 justify-center">
               Setiap kuis dirancang untuk menguji logika, wawasan, dan

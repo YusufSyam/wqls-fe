@@ -24,8 +24,8 @@ const HeaderText1: React.FC<IHeaderText1> = ({
       </Text>
       {subTitle && (
         <Text
-          className={`text-secondary-text -mt-2 text-md ${
-            textPosition == "start" ? "text-start ml-[1px]" : "text-center"
+          className={`text-secondary-text text-md ${
+            textPosition == "start" ? "text-start ml-[1px] -mt-1" : "text-center -mt-1"
           }`}
         >
           {subTitle}

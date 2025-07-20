@@ -154,7 +154,7 @@ const RegisterPage: React.FC<IRegisterPage> = ({}) => {
           </Button>
           <Text>
             Sudah punya akun? Pindah ke halaman
-            <Link href={ROUTES.LOGIN}> Login </Link>
+            <Link href={ROUTES.LOGIN} className="text-blue"> login </Link>
           </Text>
         </Stack>
       </form>

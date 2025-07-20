@@ -5,6 +5,7 @@ const ROUTES = {
   SUBMISSIONS: '/quiz/history',
   LOGIN: '/login',
   REGISTER: '/register',
+  PROFILE: '/profile'
 }
 
 export default ROUTES

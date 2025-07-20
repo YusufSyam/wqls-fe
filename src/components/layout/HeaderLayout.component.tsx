@@ -8,7 +8,7 @@ import { useAuth } from "@/context/AuthContext.context";
 import { usePathname, useRouter } from "next/navigation";
 import { WQLSIcon } from "../icons/Stickers.component";
 import Link from "next/link";
-import { IconLogoutOutline } from "../icons/Icons.component";
+import { IconLogoutOutline, IconPersonFilled } from "../icons/Icons.component";
 
 export interface IHeaderLayout {}
 
@@ -58,16 +58,28 @@ const HeaderLayout: React.FC<IHeaderLayout> = ({}) => {
         <Grid.Col span={4}>
           <Group className="h-full justify-end">
             {isLoggedIn ? (
-              <Group
-                onClick={() => {
-                  logout();
+              <Group className="gap-6">
+                <Group className="gap-1">
+                  <IconPersonFilled size={18} />
+                  <NavbarMenu
+                    pathname={pathname}
+                    label="Profil"
+                    href={ROUTES.PROFILE}
+                  />
+                </Group>
 
-                  router.push(ROUTES.LOGIN);
-                }}
-                className="cursor-pointer gap-2"
-              >
-                <Text>Log out</Text>
-                <IconLogoutOutline size={20} />
+                <div className="w-1 h-1 bg-primary-text rounded-full"></div>
+                <Group
+                  onClick={() => {
+                    logout();
+
+                    router.push(ROUTES.LOGIN);
+                  }}
+                  className="cursor-pointer gap-2"
+                >
+                  <Text>Log out</Text>
+                  <IconLogoutOutline size={20} />
+                </Group>
               </Group>
             ) : (
               <>

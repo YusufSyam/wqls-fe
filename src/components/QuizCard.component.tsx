@@ -36,7 +36,7 @@ const QuizCard: React.FC<IQuizzesWithStats> = ({
             {bidang}
           </Text>
           <Text className="text-md text-white -mt-1">
-            {total_submissions} quiz
+            {total_submissions} entry
           </Text>
         </Stack>
         {!isLoggedIn ? (

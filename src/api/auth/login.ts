@@ -16,7 +16,6 @@ export const loginUser = async (data: LoginPayload) => {
 };
 
 export const getCurrentUser = async () => {
-  const res = await axiosInstance.get("auth/users/me/");
-  return res.data; // akan berisi user object
+  const res = await axiosInstance.get("quiz/me/");
+  return res.data;
 };
-

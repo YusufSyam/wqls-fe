@@ -2,11 +2,19 @@
 
 import { getCurrentUser, loginUser } from "@/api/auth/login";
 import { logoutUser } from "@/api/auth/logout";
-import { getMe } from "@/api/auth/me";
 import axiosInstance from "@/lib/axiosInstance";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-type User = { id: number; username: string; email: string };
+type User = {
+  id: number;
+  username: string;
+  email: string;
+  name: string;
+  number: string;
+  tutor_name: string;
+  tutor_number: string;
+  school: string;
+};
 type AuthContextType = {
   user: User | null;
   login: (username: string, password: string) => Promise<void>;
@@ -20,12 +28,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
     const token = localStorage.getItem("access_token");
 
     if (token) {
       // Ambil data user saat app pertama dimuat
-      axiosInstance.get("/auth/users/me/")
+      axiosInstance
+        .get("/auth/users/me/")
         .then((res) => {
           setUser(res.data);
         })
@@ -39,12 +48,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const login = async (username: string, password: string) => {
-    await loginUser({ username, password });
+    try {
+      await loginUser({ username, password });
 
-    const user = await getCurrentUser();
-    console.log("logged in user", user?.username);
-    setUser(user);
-    setIsLoggedIn(true);
+      const user = await getCurrentUser();
+      console.log("logged in user", user?.username);
+      setUser(user);
+      setIsLoggedIn(true);
+    } catch (error) {
+      console.error("Login failed:", error);
+      // tampilkan error ke user jika perlu
+    }
   };
 
   const logout = () => {
