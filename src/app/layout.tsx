@@ -4,6 +4,7 @@ import { AuthProvider } from "@/context/AuthContext.context";
 import ROUTES from "@/utils/constants/routes.const";
 import type { Metadata } from "next";
 import "./globals.css";
+import FooterLayout from "@/components/layout/FooterLayout.component";
 
 export const metadata: Metadata = {
   title: "wqls",
@@ -25,9 +26,7 @@ export default function RootLayout({
             <ClientLayout>{children}</ClientLayout>
           </main>
 
-          <footer className="text-center text-sm text-gray-500 mt-96 pb-4">
-            © 2025 Pejuang OSN. All rights reserved.
-          </footer>
+          <FooterLayout />
         </AuthProvider>
       </body>
     </html>
