@@ -20,6 +20,7 @@ type AuthContextType = {
   login: (username: string, password: string) => Promise<void>;
   isLoggedIn: boolean;
   logout: () => void;
+  refetchUserInformation: ()=>void
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -29,32 +30,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("access_token");
-
-    if (token) {
-      // Ambil data user saat app pertama dimuat
-      axiosInstance
-        .get("/auth/users/me/")
-        .then((res) => {
-          setUser(res.data);
-        })
-        .catch((err) => {
-          console.error("Token invalid or expired", err);
-          localStorage.removeItem("access_token");
-          localStorage.removeItem("refresh_token");
-          setUser(null);
-        });
-    }
+    fetchUserInformation();
   }, []);
+
+  async function fetchUserInformation() {
+    const user = await getCurrentUser();
+    console.log("logged in user", user?.username);
+    setUser(user);
+    setIsLoggedIn(true);
+  }
 
   const login = async (username: string, password: string) => {
     try {
       await loginUser({ username, password });
-
-      const user = await getCurrentUser();
-      console.log("logged in user", user?.username);
-      setUser(user);
-      setIsLoggedIn(true);
+      fetchUserInformation();
     } catch (error) {
       console.error("Login failed:", error);
       // tampilkan error ke user jika perlu
@@ -73,7 +62,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [user]);
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, isLoggedIn }}>
+    <AuthContext.Provider value={{ user, login, logout, isLoggedIn, refetchUserInformation:fetchUserInformation }}>
       {children}
     </AuthContext.Provider>
   );

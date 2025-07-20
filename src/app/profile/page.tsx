@@ -22,7 +22,7 @@ const profileInformationSchema = yup.object().shape({
 
 const Profile: React.FC<IProfile> = ({}) => {
   const router = useRouter();
-  const { user, isLoggedIn } = useAuth();
+  const { user, isLoggedIn, refetchUserInformation } = useAuth();
 
   const form = useForm({
     validate: yupResolver(profileInformationSchema),
@@ -49,6 +49,7 @@ const Profile: React.FC<IProfile> = ({}) => {
   const handleSubmit = async (values: typeof form.values) => {
     try {
       await updateUserProfile(values);
+      refetchUserInformation()
       console.log(values)
       notifications.show({
         title: "Berhasil Update Profil",
